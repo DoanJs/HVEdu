@@ -1,7 +1,7 @@
 import localforage from "localforage";
 
 localforage.config({
-  name: "AKEdu",
+  name: "HVEdu",
   storeName: "cacheStore",
 });
 

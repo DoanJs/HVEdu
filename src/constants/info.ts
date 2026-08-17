@@ -14,45 +14,48 @@ export interface PlanCardTheme {
 export const CENTER_NAME = "TRUNG TÂM HỖ TRỢ VÀ PHÁT TRIỂN GIÁO DỤC HOÀ NHẬP HY VỌNG";
 export const FIRST_NAME = "TRUNG TÂM HỖ TRỢ VÀ PHÁT TRIỂN GIÁO DỤC HOÀ NHẬP";
 export const LAST_NAME = "HY VỌNG";
-export const activeCategoryDefault = "7KJpGSKXe7Xv0dxmMKgl"; //AKEdu
+export const activeCategoryDefault = "Jx8XkpdlcZXrrzFH6bQX"; //HVEdu
 export const indexedDBName = "HVEdu";
 export const ADMINID = "L0F0hg9mPLcgAcEyUueM9exlv1g1"; //HVEdu
-// export const ADMINIDS = ["L0F0hg9mPLcgAcEyUueM9exlv1g1"]; //HVEdu
 
 export const icon512 = "/icons/HVEdu-icon-512x512.png";
 export const icon192 = "/icons/HVEdu-icon-192x192.png";
 export const icon192web = "/icons/HVEdu-icon-192x192-web.png";
+export const bank_nnh = "/images/ngonnguhieu.png";
+export const bank_nndd = "/images/ngonngudiendat.png";
+export const bank_vdt = "/images/vandongtinh.png";
+export const bank_vdtho = "/images/vandongtho.png";
+export const bank_tnn= "/images/tienngonngu.png";
+export const bank_gt= "/images/giaotiep.png";
+export const bank_vc= "/images/vuichoi.png";
+export const bank_tpv= "/images/tuphucvu.png";
+export const bank_thd= "/images/tienhocduong.png";
+export const bank_hn= "/images/hocnhom.png";
+export const bank_qs= "/images/quansat.png";
+export const bank_ca= "/images/chinham.png";
+export const bank_gq= "/images/giacquan.png";
+
 export const dashboardMenu = "/images/dashboard-menu.png";
 export const splash = "/images/splash.png";
 export const pendingPlan = "/images/pending-plan.png";
 export const pendingReport = "/images/pending-report.png";
 export const loginImg = "/images/login-img.png";
-export const bank_nnh = "/images/nnh.png";
-export const bank_nndd = "/images/nndd.png";
-export const bank_nt = "/images/nt.png";
-export const bank_knbc = "/images/knbc.png";
-export const bank_knc = "/images/knc.png";
-export const bank_vdt = "/images/vdt.png";
-export const bank_vdtho = "/images/vdtho.png";
-export const bank_cnxh = "/images/cnxh.png";
-export const bank_hv = "/images/hv.png";
-export const bank_ttcy = "/images/ttcy.png";
-export const bank_knnt = "/images/knnt.png";
-export const bank_knxh = "/images/knxh.png";
-export const bank_abills = "/images/abills.png";
 
 export const getRandomAvatar = () => {
   const array = [
-    { icon: bank_knxh },
-    { icon: bank_knnt },
-    { icon: bank_hv },
-    { icon: bank_ttcy },
-    { icon: bank_cnxh },
+    { icon: bank_tnn },
+    { icon: bank_gt },
+    { icon: bank_vc },
+    { icon: bank_tpv },
+    { icon: bank_thd },
     { icon: bank_vdtho },
     { icon: bank_vdt },
-    { icon: bank_knbc },
+    { icon: bank_hn },
     { icon: bank_nnh },
     { icon: bank_nndd },
+    { icon: bank_qs },
+    { icon: bank_ca },
+    { icon: bank_gq },
   ];
 
   return array[Math.floor(Math.random() * array.length)];
@@ -150,16 +153,21 @@ const planCardThemes = [
     icon: "/icons/gim_white.png",
   },
 ];
-//HoaBanMaiEdu
+//HVEdu
 export const fieldOrder = [
-  "gGNJ5mQZRSxkSW4qAu6F", // Ngôn ngữ hiểu
-  "3EUhuJoxzHauQpx1pPxq", // Ngôn ngữ diễn đạt
-  "zfnX1X3wvP46rRF3k4gB", // Chỉnh âm
-  "j6fFXTUD1D6rym4UmKkV", // Nhận thức
-  "cyg1PnZ4snHm583dFBzp", // Vận động tinh
-  "qw6gesBxUmEgEDow153O", // Cá nhân xã hội
-  "Nji6cMUy0TcZ1Tw8B2iG", // Tập trung chú ý
-  "48UQhGWIQECsi8lAd7Sc", // Hành vi
+  "Jx8XkpdlcZXrrzFH6bQX", // Tiền ngôn ngữ
+  "Yi5J6gNI13S9zWfQZw8e", // Giao tiếp
+  "wP9FYxPtWil2Ss3Mm06S", // Ngôn ngữ hiểu
+  "sWobMN7VAWLtgDdxKP2n", // Ngôn ngữ diễn đạt
+  "TM6PVKuFYIlbUkfOeiM0", // Vui chơi
+  "8ftbSbuOgqf66XENkw2j", // Vận động thô
+  "rPZHRivhLCsJ6bECFC0O", // Vận động tinh
+  "2tWH3H8idQC9WytyqZld", // Tự phục vụ
+  "jRtks7uZ5jKw1QNLbqhu", // Tiền học đường
+  "mamyqwbjpOPb3jbnYCPN", // Học nhóm
+  "Sb7af2lVreWXapcOa8yu", // Quan sát, chú ý, lắng nghe
+  "hvY1X9m5VlJQpdlkwfOc", // Chỉnh âm
+  "1pTeKHmQVYVZt2UjfCc3", // Giác quan
 ];
 
 // functions:
@@ -192,181 +200,62 @@ export const getUIForBank = (fieldName: string) => {
   switch (fieldName) {
     case "Ngôn ngữ hiểu":
       icon = bank_nnh;
-      desc = "Hiểu và thực hiện các yêu cầu, chỉ dẫn trong giao tiếp.";
       color = "blue";
       break;
     case "Ngôn ngữ diễn đạt":
       icon = bank_nndd;
-      desc = "Diễn đạt nhu cầu, ý tưởng bằng lời nói, cử chỉ, hình ảnh.";
       color = "yellow";
       break;
-    case "Kỹ năng bắt chước":
-      icon = bank_knbc;
+    case "Học nhóm":
+      icon = bank_hn;
       desc =
-        "Bắt chước hành động, âm thanh và lời nói để hỗ trợ học tập và giao tiếp.";
       color = "orange";
       break;
-    case "Kỹ năng chơi":
-      icon = bank_knc;
-      desc =
-        "Tham gia các hoạt động chơi phù hợp, biết chơi độc lập và chơi cùng người khác.";
+    case "Chỉnh âm":
+      icon = bank_ca;
       color = "pink";
       break;
-    case "Cá nhân xã hội":
-      icon = bank_cnxh;
-      desc = "Kỹ năng tự chăm sóc, tương tác xã hội và ứng xử phù hợp.";
+    case "Tiền học đường":
+      icon = bank_thd;
       color = "green";
       break;
-    case "Tập trung chú ý":
-      icon = bank_ttcy;
-      desc = "Duy trì sự chú ý vào nhiệm vụ trong một khoảng thời gian.";
+    case "Tự phục vụ":
+      icon = bank_tpv;
       color = "blue";
       break;
-    case "Kỹ năng nhận thức":
-      icon = bank_knnt;
-      desc =
-        "Phát triển khả năng quan sát, ghi nhớ, tư duy và giải quyết các nhiệm vụ học tập.";
-      color = "yellow";
       break;
-    case "Nhận thức":
-      icon = bank_nt;
-      desc = "Nhận biết, phân loại, so sánh, ghi nhớ và giải quyết vấn đề.";
+    case "Tiền ngôn ngữ":
+      icon = bank_tnn;
       color = "pink";
       break;
-    case "Kỹ năng xã hội":
-      icon = bank_knxh;
-      desc =
-        "Tương tác, hợp tác và xây dựng các mối quan hệ phù hợp trong các tình huống xã hội.";
+    case "Giao tiếp":
+      icon = bank_gt;
       color = "green";
       break;
     case "Vận động thô":
       icon = bank_vdtho;
-      desc = "Sử dụng các cơ lớn của cơ thể để di chuyển và giữ thăng bằng.";
       color = "orange";
       break;
     case "Vận động tinh":
       icon = bank_vdt;
-      desc = "Sử dụng các cơ nhỏ của bàn tay, ngón tay một cách khéo léo.";
       color = "blue";
-      break;
-    case "Hợp tác và khen thưởng":
-      icon = bank_knc;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "pink";
-      break;
-    case "Quan sát":
-      icon = bank_vdtho;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "blue";
-      break;
-    case "Nhận biết":
-      icon = bank_cnxh;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "orange";
-      break;
-    case "Bắt chước":
-      icon = bank_ttcy;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "green";
-      break;
-    case "Nói theo":
-      icon = bank_knc;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "yellow";
-      break;
-    case "Yêu cầu":
-      icon = bank_vdtho;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "pink";
-      break;
-    case "Gọi tên":
-      icon = bank_cnxh;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "yellow";
-      break;
-    case "Hội thoại liên tưởng":
-      icon = bank_ttcy;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "blue";
-      break;
-    case "Cú pháp ngữ pháp":
-      icon = bank_vdtho;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "green";
       break;
     case "Vui chơi":
-      icon = bank_cnxh;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "orange";
+      icon = bank_vc;
+      color = "pink";
       break;
-    case "Ngôn ngữ tự phát":
-      icon = bank_ttcy;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
+    case "Quan sát, chú ý, lắng nghe":
+      icon = bank_qs;
       color = "blue";
-      break;
-    case "Học nhóm":
-      icon = bank_vdtho;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "pink";
-      break;
-    case "Tuân theo nề nếp":
-      icon = bank_cnxh;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "green";
-      break;
-    case "Tổng hợp khái quát":
-      icon = bank_ttcy;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "yellow";
-      break;
-    case "Đọc":
-      icon = bank_vdtho;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "orange";
-      break;
-    case "Toán":
-      icon = bank_cnxh;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "pink";
-      break;
-    case "Viết":
-      icon = bank_knnt;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "green";
-      break;
-    case "Ghép vần":
-      icon = bank_knc;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "blue";
-      break;
-    case "Tự mặc quần áo":
-      icon = bank_cnxh;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "yellow";
-      break;
-    case "Ăn":
-      icon = bank_vdtho;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "orange";
-      break;
-    case "Tự chăm sóc":
-      icon = bank_knc;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "pink";
-      break;
-    case "Đi vệ sinh":
-      icon = bank_cnxh;
-      // desc = "Bộ công cụ đánh giá các kỹ năng nền tảng, hỗ trợ xây dựng mục tiêu và theo dõi tiến trình can thiệp.";
-      color = "green";
       break;
     case "Giác quan":
-      icon = bank_knxh;
-      // desc =
-      //   "Tương tác, hợp tác và xây dựng các mối quan hệ phù hợp trong các tình huống xã hội.";
-      color = "green";
+      icon = bank_gq;
+      color = "blue";
       break;
 
     default:
+      icon = bank_gq;
+      color = "blue";
       break;
   }
 
