@@ -4,7 +4,7 @@ export const menuItems = [
     label: "Tổng quan",
     icon: "bi-house-door",
     navigate: "general",
-    title: "Xin chào, Giáo viên An Khang",
+    title: "Xin chào, Giáo viên Hy Vọng",
     subTitle: "Chào mừng bạn trở lại hệ thống quản lý can thiệp.",
   },
   {

@@ -11,7 +11,7 @@ interface TitleNavbarState {
 
 const useTitleNavbarStore = create<TitleNavbarState>((set) => ({
   titleNavbar: {
-    title: "Xin chào, Giáo viên An Khang",
+    title: "Xin chào, Giáo viên Hy Vọng",
     subTitle: "Chào mừng bạn trở lại hệ thống quản lý can thiệp.",
   },
   loading: false,
@@ -21,7 +21,7 @@ const useTitleNavbarStore = create<TitleNavbarState>((set) => ({
   clearTitleNavbar: () =>
     set({
       titleNavbar: {
-        title: "Xin chào, Giáo viên An Khang",
+        title: "Xin chào, Giáo viên Hy Vọng",
         subTitle: "Chào mừng bạn trở lại hệ thống quản lý can thiệp.",
       },
     }),

@@ -23,7 +23,7 @@ const Logo = () => (
     }}
   >
     <img src={icon512} alt="register-logo" />
-    <div className="ak-register-logo-text">AN KHANG</div>
+    <div className="ak-register-logo-text">HY VỌNG</div>
     <div className="ak-register-logo-sub">EDUCATION</div>
   </Link>
 );

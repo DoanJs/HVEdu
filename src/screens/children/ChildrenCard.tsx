@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useSelectNavbarStore, useTitleNavbarStore } from "../../zustand";
+import { useSelectNavbarStore, useTitleNavbarStore, useUserStore } from "../../zustand";
 import { ADMINID, getRandomAvatar, icon512 } from "../../constants/info";
 
 export default function ChildrenCard({
@@ -10,6 +10,9 @@ export default function ChildrenCard({
 }: any) {
   const { setSelectNavbar } = useSelectNavbarStore();
   const { setTitleNavbar } = useTitleNavbarStore();
+  const {user} = useUserStore()
+  
+  const isAdmin = user && user?.role === 'admin' 
   return (
     <Link
       to={`/home/${child.id}/general`}
@@ -20,7 +23,7 @@ export default function ChildrenCard({
         }
         setSelectNavbar("general");
         setTitleNavbar({
-          title: "Xin chào, Giáo viên An Khang",
+          title: "Xin chào, Giáo viên Hy Vọng",
           subTitle: "Chào mừng bạn trở lại hệ thống quản lý can thiệp.",
         });
       }}
@@ -89,7 +92,7 @@ export default function ChildrenCard({
         </div>
         {child.teacherIds.length > 0 &&
           child.teacherIds.map((_: any) => {
-            if (_ !== ADMINID) {
+            if (!isAdmin) {
               return (
                 <div className="teacher-row" key={_} style={{justifyContent: "flex-start"}}>
                   <img

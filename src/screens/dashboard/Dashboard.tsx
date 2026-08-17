@@ -291,8 +291,8 @@ export default function Dashboard() {
       <aside className={`ak-sidebar ${sidebarOpen ? "show" : ""}`}>
         <Link to="/" className="logo-box">
           {/* <div className="logo-circle"><i className="bi bi-stars" /></div> */}
-          <img src={icon512} alt="An Khang Education" />
-          <h2>AN KHANG</h2>
+          <img src={icon512} alt="Hy Vọng Education" />
+          <h2>HY VỌNG</h2>
           <span>EDUCATION</span>
         </Link>
 
@@ -347,7 +347,7 @@ export default function Dashboard() {
         <header className="top-header">
           <div className="ak-dashboard-title-area">
             {![
-              "Xin chào, Giáo viên An Khang",
+              "Xin chào, Giáo viên Hy Vọng",
               "Ngân hàng mục tiêu",
               "Kế hoạch can thiệp",
               "Báo cáo can thiệp",
@@ -404,7 +404,7 @@ export default function Dashboard() {
         <section className="dashboard-scroll-area">
           <Outlet />
           <div className="dashboard-slogan">
-            <span>★</span> “Tận tâm – Chuyên nghiệp – Đồng hành – Phát triển”{" "}
+            <span>★</span> “Kết nối yêu thương – Kiến tạo tương lai”{" "}
             <span>★</span>
           </div>
         </section>

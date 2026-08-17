@@ -9,7 +9,7 @@ import { handleToastError, handleToastSuccess } from "../../constants/handleToas
 const Logo = () => (
   <div className="ak-login-logo">
     <img src={icon512} alt="login-logo" />
-    <div className="ak-login-logo-text">AN KHANG</div>
+    <div className="ak-login-logo-text">HY VỌNG</div>
     <div className="ak-login-logo-sub">EDUCATION</div>
   </div>
 );

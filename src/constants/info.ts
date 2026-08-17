@@ -15,9 +15,9 @@ export const CENTER_NAME = "TRUNG TÂM HỖ TRỢ VÀ PHÁT TRIỂN GIÁO DỤC 
 export const FIRST_NAME = "TRUNG TÂM HỖ TRỢ VÀ PHÁT TRIỂN GIÁO DỤC HOÀ NHẬP";
 export const LAST_NAME = "HY VỌNG";
 export const activeCategoryDefault = "7KJpGSKXe7Xv0dxmMKgl"; //AKEdu
-export const indexedDBName = "AKEdu";
-export const ADMINID = "vzPZKsn6QEeP0uKTh8bgisRhlwx2"; //AKEdu
-export const ADMINIDS = ["vzPZKsn6QEeP0uKTh8bgisRhlwx2"]; //AKEdu
+export const indexedDBName = "HVEdu";
+export const ADMINID = "L0F0hg9mPLcgAcEyUueM9exlv1g1"; //HVEdu
+// export const ADMINIDS = ["L0F0hg9mPLcgAcEyUueM9exlv1g1"]; //HVEdu
 
 export const icon512 = "/icons/HVEdu-icon-512x512.png";
 export const icon192 = "/icons/HVEdu-icon-192x192.png";

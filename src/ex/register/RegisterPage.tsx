@@ -23,7 +23,7 @@ const Logo = () => (
     }}
   >
     <img src={icon512} alt="register-logo" />
-    <div className="ak-register-logo-text">AN KHANG</div>
+    <div className="ak-register-logo-text">HY VỌNG</div>
     <div className="ak-register-logo-sub">EDUCATION</div>
   </Link>
 );
@@ -283,7 +283,7 @@ export default function RegisterPage() {
           <div className="ak-welcome">
             <h1>
               Chào mừng bạn đến với <br />
-              An Khang Education
+              Hy Vọng Education
             </h1>
             <p>
               Tạo tài khoản để tiếp tục quản lý và đồng hành cùng trẻ mỗi ngày.

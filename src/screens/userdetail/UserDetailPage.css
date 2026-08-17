@@ -1,7 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 :root {
-  --user-blue: #0884e8;
+  --user-blue: #0058B0;
   --user-blue-dark: #0755b8;
   --user-navy: #0d1d4a;
   --user-text: #23325f;
@@ -105,7 +105,7 @@
   height: 46px;
   border: 4px solid #ffffff;
   border-radius: 50%;
-  background: linear-gradient(135deg, #0b91ee, #0575d7);
+  background: linear-gradient(135deg, #0b91ee, #0058B0);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -197,7 +197,7 @@
 .edit-profile-btn,
 .save-btn {
   color: #ffffff;
-  background: linear-gradient(135deg, #0b91ee, #0575d7);
+  background: linear-gradient(135deg, #0b91ee, #0058B0);
   box-shadow: 0 12px 24px rgba(8, 132, 232, 0.24);
 }
 
@@ -267,7 +267,7 @@
   align-items: center;
   justify-content: center;
   background: #e3f3ff;
-  color: #087ee2;
+  color: #0058B0;
   font-size: 23px;
 }
 

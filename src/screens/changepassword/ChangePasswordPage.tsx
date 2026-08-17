@@ -11,6 +11,7 @@ import {
 import { auth } from "../../firebase.config";
 import { useLoadingOverLayStore, useUserStore } from "../../zustand";
 import "./ChangePasswordPage.css";
+import { icon512 } from "../../constants/info";
 
 const securityNotes = [
   {
@@ -304,7 +305,7 @@ export default function ChangePasswordPage() {
 
         <aside className="security-panel">
           <div className="security-profile-card">
-            <img src={user?.avatar} alt={"teacher-avatar"} />
+            <img src={user?.avatar || icon512} alt={"teacher-avatar"} />
             <div>
               <span>Tài khoản đang đổi mật khẩu</span>
               <h3>{user?.fullName}</h3>

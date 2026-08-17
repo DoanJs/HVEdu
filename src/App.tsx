@@ -2,14 +2,18 @@ import { onAuthStateChanged, signOut, User } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import LoadingOverlay from "./components/LoadingOverLay";
+import RegisterPage from "./ex/register/RegisterPage";
 import { auth, db } from "./firebase.config";
+import { usePresence } from "./hooks/usePresence";
 import AddReportPage from "./screens/addreport/AddReportPage";
 import BankPage from "./screens/bank/BankPage";
 import CartDemoPage from "./screens/cartDemo/CartDemoPage";
 import ChangePasswordPage from "./screens/changepassword/ChangePasswordPage";
 import ChildrenPage from "./screens/children/ChildrenPage";
 import Dashboard from "./screens/dashboard/Dashboard";
+import ForgotPasswordPage from "./screens/forgotpassword/ForgotPasswordPage";
 import GeneralPage from "./screens/general/GeneralPage";
 import LoginPage from "./screens/login/LoginPage";
 import PendingPage from "./screens/pending/PendingPage";
@@ -21,12 +25,6 @@ import SplashPage from "./screens/splash/SplashPage";
 import TargetPage from "./screens/target/TargetPage";
 import UserDetailPage from "./screens/userdetail/UserDetailPage";
 import { useLoadingOverLayStore, useUserStore } from "./zustand";
-import { ToastContainer } from "react-toastify";
-import { usePresence } from "./hooks/usePresence";
-import ScrollButtons from "./scroll/ScrollButtons";
-import RegisterPage from "./ex/register/RegisterPage";
-import { ADMINIDS } from "./constants/info";
-import ForgotPasswordPage from "./screens/forgotpassword/ForgotPasswordPage";
 
 type AuthState = {
   user: User | null;
@@ -35,7 +33,8 @@ type AuthState = {
 
 export default function App() {
   usePresence();
-  const { setUser } = useUserStore();
+  const { setUser, user } = useUserStore();
+  const isAdmin = user && user.role === 'admin'
   const { loadingOverLay } = useLoadingOverLayStore();
   const [authState, setAuthState] = useState<AuthState>({
     user: null,
@@ -153,7 +152,7 @@ export default function App() {
         <Route
           path="register"
           element={
-            authState.user && ADMINIDS.includes(authState.user.uid) ? (
+            isAdmin ? (
               <RegisterPage />
             ) : (
               <Navigate to="/" replace />
@@ -193,185 +192,3 @@ export default function App() {
     </div>
   );
 }
-
-// <div>
-//   {/* <ReportPage /> */}
-//   {/* <PlanPage /> */}
-//   {/* <PendingPage /> */}
-//   {/* <CartPage /> */}
-
-//   {/* lấy Dashboard từ trang BankPage này */}
-//   {/* <BankPage /> */}
-//   <Dashboard />
-
-//   {/* <GeneralPage /> */}
-//   {/* <ChildDetailPage /> */}
-//   {/* <PlanDetailPage /> */}
-//   {/* <ReportDetailPage /> */}
-//   {/* <AddReportPage /> */}
-//   {/* <ChildrenPage /> */}
-//   {/* <SplashPage /> */}
-//   {/* <LoadingPage /> */}
-//   {/* <LoginPage /> */}
-//   {/* <RegisterPage /> */}
-//   {/* <ForgotPasswordPage /> */}
-
-//   {/* <ToastPage /> chưa làm được - đang lỗi */}
-
-//   {/* <CartDemoPage /> */}
-//   {/* <CommentModal
-//     show={showComment}
-//     onClose={() => setShowComment(false)}
-//     plan="Kế hoạch tháng 07/2026"
-//     report="Báo cáo tháng 07/2026"
-//     comments={comments}
-//     title="title"
-//   /> */}
-
-//   {/* <DeleteModal
-//     show={showDelete}
-//     onClose={() => setShowDelete(false)}
-//     item={deleteItem}
-//     type="report"
-//     onConfirm={() => {
-//       console.log("Đã xóa");
-//       setShowDelete(false);
-//     }}
-//   /> */}
-
-//   {/* <NotificationDropdown
-//     show={showNotification}
-//     onClose={() => setShowNotification(false)}
-//     notifications={notifications}
-//   /> */}
-//   {/* <UserDropdown
-//     show={showUserMenu}
-//     onClose={() => setShowUserMenu(false)}
-//     user={user}
-//     onProfile={() => navigate("/profile")}
-//     onChangePassword={() => navigate("/account")}
-//     onSetting={() => navigate("/setting")}
-//     onHelp={() => navigate("/help")}
-//     onLogout={handleLogout}
-//   /> */}
-// </div>
-
-//   const navigate = useNavigate();
-// const [showComment, setShowComment] = useState(true);
-// type CommentStatus = "approved" | "edit" | "pending";
-// const [showDelete, setShowDelete] = useState(true);
-// const [deleteItem, setDeleteItem] = useState(null);
-// const [showUserMenu, setShowUserMenu] = useState(true);
-// const user = {
-//   id: "teacher01",
-//   avatar: "./avatar.png",
-//   fullName: "Trần Thị My Ny",
-//   position: "Giám đốc",
-//   email: "myny@gmail.com",
-// };
-
-// const report = {
-//   icon: "/icons/report.png",
-
-//   title: "Kế hoạch can thiệp cá nhân - 01/05/2024",
-
-//   child: "Nguyễn Minh Khang",
-
-//   teacher: "Cô Lê Thị Minh",
-
-//   createdAt: "01/05/2024 - 09:15",
-
-//   status: "approved",
-// };
-// type NotificationItem = {
-//   id: number;
-//   type: "report" | "plan" | "comment" | "calendar" | "upload";
-//   title: string;
-//   description: string;
-//   time: string;
-//   unread: boolean;
-// };
-
-// const [showNotification, setShowNotification] = useState(true);
-// const notifications: NotificationItem[] = [
-//   {
-//     id: 1,
-//     type: "report",
-//     title: "Báo cáo can thiệp đã được duyệt",
-//     description:
-//       'Báo cáo "Kế hoạch cá nhân - 01/05/2024" đã được duyệt bởi Cô Lê Thị Minh.',
-//     time: "5 phút trước",
-//     unread: true,
-//   },
-
-//   {
-//     id: 2,
-//     type: "plan",
-//     title: "Kế hoạch can thiệp đã được duyệt",
-//     description: 'Kế hoạch "Kế hoạch cá nhân - 01/05/2024" đã được duyệt.',
-//     time: "15 phút trước",
-//     unread: true,
-//   },
-
-//   {
-//     id: 3,
-//     type: "comment",
-//     title: "Có góp ý mới cho báo cáo",
-//     description: "Cô Nguyễn Thị An đã gửi góp ý cho báo cáo ngày 07/05/2024.",
-//     time: "1 giờ trước",
-//     unread: true,
-//   },
-
-//   {
-//     id: 4,
-//     type: "calendar",
-//     title: "Lịch hẹn sắp tới",
-//     description:
-//       "Bạn có lịch hẹn với phụ huynh của Trần Bảo Châu vào 09:00 ngày mai.",
-//     time: "2 giờ trước",
-//     unread: false,
-//   },
-
-//   {
-//     id: 5,
-//     type: "upload",
-//     title: "Tải file báo cáo thành công",
-//     description:
-//       'File "Báo cáo tháng 04/2024.pdf" đã được tải lên thành công.',
-//     time: "3 giờ trước",
-//     unread: false,
-//   },
-// ];
-
-// type CommentItemType = {
-//   id: number;
-//   avatar: string;
-//   name: string;
-//   role: string;
-//   date: string;
-//   status: CommentStatus;
-//   content: string;
-// };
-// const comments: CommentItemType[] = [
-//   {
-//     id: 1,
-//     avatar: "https://i.pravatar.cc/150?img=1",
-//     name: "Cô My Ny",
-//     role: "Giám đốc",
-//     date: "05/07/2026 09:20",
-//     status: "approved",
-//     content:
-//       "Kế hoạch khá đầy đủ. Tuy nhiên cần bổ sung thêm chiến lược hỗ trợ ở mục tiêu số 4.",
-//   },
-//   {
-//     id: 2,
-//     avatar: "https://i.pravatar.cc/150?img=2",
-//     name: "Cô Thu Phương",
-//     role: "Trưởng chuyên môn",
-//     date: "05/07/2026 10:15",
-//     status: "edit",
-//     content: "Báo cáo cần mô tả rõ hành vi của trẻ ở hoạt động cuối.",
-//   },
-// ];
-
-// const handleLogout = () => {};

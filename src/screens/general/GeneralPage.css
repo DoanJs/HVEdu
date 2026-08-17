@@ -49,7 +49,7 @@ button {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, #0f91ee, #006ed1);
+  background: linear-gradient(135deg, #0f91ee, #0058B0);
   color: #fff;
   font-size: 23px;
   box-shadow: 0 10px 20px rgba(0, 126, 217, 0.2);
@@ -110,7 +110,7 @@ button {
 }
 
 .child-detail i {
-  color: #0e86dd;
+  color: #0058B0;
   margin-right: 10px;
   font-size: 20px;
 }
@@ -227,7 +227,7 @@ button {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, #0e98ef, #0071d6);
+  background: linear-gradient(135deg, #0e98ef, #0058B0);
   color: #fff;
   font-size: 52px;
   box-shadow: 0 16px 28px rgba(0, 126, 217, 0.22);

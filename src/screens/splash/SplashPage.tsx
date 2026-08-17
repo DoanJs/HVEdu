@@ -94,7 +94,7 @@ export default function SplashPage({ progress }: SplashPageProps) {
 
         <div className="splash-logo">
           <img src={icon512} alt="logo" />
-          <h1>AN KHANG</h1>
+          <h1>HY VỌNG</h1>
           <span>EDUCATION</span>
         </div>
 
