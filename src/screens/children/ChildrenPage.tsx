@@ -274,7 +274,7 @@ export default function ChildrenPage() {
             title="Đăng xuất"
             onClick={() => setShowLogout(true)}
             style={{
-              background: "linear-gradient(135deg, #ede843, #0072d8)",
+              background: "linear-gradient(135deg, #F8B800, #0058B0)",
               color: "#fff",
               padding: "10px",
               borderRadius: "100%",
@@ -407,7 +407,7 @@ export default function ChildrenPage() {
                 className="btn action-btn-danger"
                 onClick={handleLogout}
                 style={{
-                  background: "linear-gradient(135deg, #0d98f4, #0072d8)",
+                  background: "linear-gradient(135deg, #0058B0, #0072d8)",
                   color: "#fff",
                 }}
               >

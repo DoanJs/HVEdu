@@ -1,5 +1,8 @@
 import { FieldValue } from "firebase/firestore";
-
+// :root {
+//   --blue: #0058B0;
+//   --yellow: #F8B800;
+// }
 // types:
 export interface PlanCardTheme {
   bg: string;
@@ -8,17 +11,17 @@ export interface PlanCardTheme {
 }
 
 // variables:
-export const CENTER_NAME = "TRUNG TÂM CAN THIỆP SỚM AN KHANG";
-export const FIRST_NAME = "TRUNG TÂM CAN THIỆP SỚM";
-export const LAST_NAME = "AN KHANG";
+export const CENTER_NAME = "TRUNG TÂM HỖ TRỢ VÀ PHÁT TRIỂN GIÁO DỤC HOÀ NHẬP HY VỌNG";
+export const FIRST_NAME = "TRUNG TÂM HỖ TRỢ VÀ PHÁT TRIỂN GIÁO DỤC HOÀ NHẬP";
+export const LAST_NAME = "HY VỌNG";
 export const activeCategoryDefault = "7KJpGSKXe7Xv0dxmMKgl"; //AKEdu
 export const indexedDBName = "AKEdu";
 export const ADMINID = "vzPZKsn6QEeP0uKTh8bgisRhlwx2"; //AKEdu
 export const ADMINIDS = ["vzPZKsn6QEeP0uKTh8bgisRhlwx2"]; //AKEdu
 
-export const icon512 = "/icons/AKEdu-icon-512x512.png";
-export const icon192 = "/icons/AKEdu-icon-192x192.png";
-export const icon192web = "/icons/AKEdu-icon-192x192-web.png";
+export const icon512 = "/icons/HVEdu-icon-512x512.png";
+export const icon192 = "/icons/HVEdu-icon-192x192.png";
+export const icon192web = "/icons/HVEdu-icon-192x192-web.png";
 export const dashboardMenu = "/images/dashboard-menu.png";
 export const splash = "/images/splash.png";
 export const pendingPlan = "/images/pending-plan.png";

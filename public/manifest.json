@@ -1,6 +1,6 @@
 {
-  "short_name": "An Khang Education",
-  "name": "An Khang Education",
+  "short_name": "Hy Vọng Education",
+  "name": "Hy Vọng Education",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,19 +8,19 @@
       "type": "image/x-icon"
     },
     {
-      "src": "/icons/AKEdu-icon-192x192.png",
+      "src": "/icons/HVEdu-icon-192x192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "/icons/AKEdu-icon-512x512.png",
+      "src": "/icons/HVEdu-icon-512x512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any"
     },
     {
-      "src": "/icons/AKEdu-icon-512x512.png",
+      "src": "/icons/HVEdu-icon-512x512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"

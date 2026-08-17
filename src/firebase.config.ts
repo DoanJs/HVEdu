@@ -4,17 +4,16 @@ import { getFirestore } from "firebase/firestore";
 import { getFunctions } from "firebase/functions";
 import { getDatabase } from "firebase/database";
 
-// config for AKEdu
+// config for HVEdu
 const firebaseConfig = {
-  apiKey: "AIzaSyCcksBLOMZZJCmezBF8PX0VKHyVYKzPXJ4",
-  authDomain: "akedu-89ce6.firebaseapp.com",
-  projectId: "akedu-89ce6",
-  storageBucket: "akedu-89ce6.firebasestorage.app",
-  messagingSenderId: "645191561620",
-  appId: "1:645191561620:web:341686e0b7f5881a975f81",
-  measurementId: "G-SYY1EQ1S82",
-  databaseURL:
-    "https://akedu-89ce6-default-rtdb.asia-southeast1.firebasedatabase.app/",
+  apiKey: "AIzaSyAkFyg-gZ0262hDhGMP6NZnJTUwnpYNvUI",
+  authDomain: "hvedu-de288.firebaseapp.com",
+  databaseURL: "https://hvedu-de288-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "hvedu-de288",
+  storageBucket: "hvedu-de288.firebasestorage.app",
+  messagingSenderId: "220767617656",
+  appId: "1:220767617656:web:a445b9fd8f0448b74f638d",
+  measurementId: "G-L0FSB73CY1"
 };
 
 // setLogLevel("debug");

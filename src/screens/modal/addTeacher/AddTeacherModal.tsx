@@ -432,7 +432,7 @@ export default function AddTeacherModal({
 
             <div className="ak-child-avatar-info">
               <h3>Ảnh đại diện</h3>
-              <p>Chọn ảnh rõ khuôn mặt để dễ nhận biết hồ sơ.</p>
+              <p>Ảnh rõ khuôn mặt để dễ nhận biết hồ sơ.</p>
 
               {/* {avatarPreview && (
                 <button

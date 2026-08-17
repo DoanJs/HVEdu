@@ -25,6 +25,9 @@ export default function ChildrenCard({
         });
       }}
       className="ak-child-card"
+      style={{
+        color: '#0058B0'
+      }}
     >
       <div className="child-photo-wrap">
         <img
