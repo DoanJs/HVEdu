@@ -1,0 +1,42 @@
+export const notificationData = [
+  {
+    id: 1,
+    type: 'report',
+    title: 'Báo cáo can thiệp đã được duyệt',
+    description: 'Báo cáo “Kế hoạch cá nhân - 01/05/2024” đã được duyệt bởi Cô Lê Thị Minh.',
+    time: '5 phút trước',
+    unread: true,
+  },
+  {
+    id: 2,
+    type: 'plan',
+    title: 'Kế hoạch can thiệp đã được duyệt',
+    description: 'Kế hoạch “Kế hoạch cá nhân - 01/05/2024” đã được duyệt.',
+    time: '15 phút trước',
+    unread: true,
+  },
+  {
+    id: 3,
+    type: 'comment',
+    title: 'Có góp ý mới cho báo cáo',
+    description: 'Cô Nguyễn Thị An đã gửi góp ý cho báo cáo ngày 07/05/2024.',
+    time: '1 giờ trước',
+    unread: true,
+  },
+  {
+    id: 4,
+    type: 'calendar',
+    title: 'Lịch hẹn sắp tới',
+    description: 'Bạn có lịch hẹn với phụ huynh của Trần Bảo Châu vào 09:00 ngày mai.',
+    time: '2 giờ trước',
+    unread: false,
+  },
+  {
+    id: 5,
+    type: 'upload',
+    title: 'Tải file báo cáo thành công',
+    description: 'File “Báo cáo tháng 04/2024.pdf” đã được tải lên thành công.',
+    time: '3 giờ trước',
+    unread: false,
+  },
+];

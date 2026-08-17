@@ -1,0 +1,58 @@
+export const dataTeachers = [
+  {
+    fullName: "Ngô Thị Hương",
+    position: "Giám đốc",
+    email: "huonghuong.vl@gmail.com",
+    phone: "0973.868.631",
+    id: "vzPZKsn6QEeP0uKTh8bgisRhlwx2",
+  },
+  {
+    fullName: "Nguyễn Thị Vương Hà",
+    position: "Giáo viên",
+    email: "halunxinhgai94@gmail.com",
+    phone: "0962.630024",
+    id: "Kh2ptgrGyLZDAd95l9IJDMxs7Xn2",
+  },
+  {
+    fullName: "Lê Thị Hạnh",
+    position: "Giáo viên",
+    email: "lehanhphongve@gmail.com",
+    phone: "0971228445",
+    id: "N8s1nfkhxETijaMIliaL31TtVqk2",
+  },
+  {
+    fullName: "Ngô Thị Nhung",
+    position: "Giáo viên",
+    email: "lehoaianh2511@gmail.com",
+    phone: "0976192367",
+    id: "oCipOTvUsKWDdRymauKT9aCrF5R2",
+  },
+  {
+    fullName: "Trịnh Thị Nga",
+    position: "Giáo viên",
+    email: "ngangianganh@gmail.com",
+    phone: "0855585226",
+    id: "Cr9e9YJ1Ixfak7wigC6XphOFelG3",
+  },
+  {
+    fullName: "Lê Thị Sinh",
+    position: "Giáo viên",
+    email: "lethisinh1578@gmail.com",
+    phone: "0379341133",
+    id: "nUn8idtsWoPrdTmiuZFcY5SGCN02",
+  },
+  {
+    fullName: "Lê Thị Tuyến",
+    position: "Giáo viên",
+    email: "tuyenvov@gmail.com",
+    phone: "0868457686",
+    id: "rRx9iRapLzQbciK8RomzNaiDw6w2",
+  },
+  {
+    fullName: "Trịnh Thị Huyền",
+    position: "Giáo viên",
+    email: "trinhhuyenminh0@gmail.com",
+    phone: "0983430735",
+    id: "htcHg1idVFegvopOGEPSLW3n2N92",
+  },
+];

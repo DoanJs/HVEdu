@@ -1,0 +1,192 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
+
+:root{
+  --ak-blue:#0878e8;
+  --ak-blue-2:#0b8dff;
+  --ak-blue-dark:#071b55;
+  --ak-soft-blue:#eef8ff;
+  --ak-yellow:#ffc928;
+  --ak-text:#071945;
+  --ak-muted:#687792;
+  --ak-border:#e8eff8;
+  --ak-shadow:0 18px 45px rgba(21,72,145,.12);
+}
+
+*{box-sizing:border-box}
+html,body,#root{min-height:100%;margin:0}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ak-text)}
+button,input{font:inherit}
+
+.ak-register-page{
+  min-height:100vh;
+  width:100%;
+  padding:24px;
+  background:linear-gradient(180deg,#f5fbff 0%,#eef8ff 100%);
+  overflow:hidden;
+  position:relative;
+}
+
+.ak-register-shell{
+  position:relative;
+  min-height:calc(100vh - 48px);
+  border:1px solid rgba(218,232,247,.95);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 72% 7%,rgba(255,255,255,.9) 0 18%,transparent 19%),
+    linear-gradient(125deg,#eff9ff 0%,#f8fcff 48%,#eaf6ff 100%);
+  box-shadow:0 20px 60px rgba(44,103,177,.08);
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:minmax(420px,1fr) minmax(390px,560px);
+  align-items:center;
+  gap:40px;
+  padding:52px 72px 84px;
+
+  background-image: url("/public/images/login-bg.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ak-register-shell:before{
+  content:"";
+  position:absolute;
+  inset:-120px -80px auto auto;
+  width:760px;
+  height:410px;
+  border-radius:0 0 0 100%;
+  border-bottom:4px solid rgba(255,255,255,.85);
+  transform:rotate(-10deg);
+  opacity:.75;
+}
+
+.ak-register-left,.ak-register-right{position:relative;z-index:2}
+.ak-register-left{align-self:stretch;display:flex;flex-direction:column}
+.ak-register-right{display:flex;justify-content:center}
+
+.ak-register-logo{width:180px;text-align:center;margin-bottom:58px}
+.ak-register-logo img {
+  height: 150px;
+  width: auto;
+  object-fit: cover;
+}
+.ak-register-logo-mark{width:126px;height:92px;margin:0 auto 2px;position:relative;border-top:8px solid var(--ak-yellow);border-radius:80px 80px 0 0}
+.ak-register-logo-mark:before{content:"";position:absolute;left:38px;bottom:8px;width:48px;height:58px;border-radius:40px 40px 8px 8px;background:linear-gradient(160deg,#0b8fff,#005ec8);clip-path:polygon(50% 0,76% 38%,100% 100%,56% 74%,35% 100%,0 100%,25% 36%)}
+.ak-register-logo-mark:after{content:"";position:absolute;left:58px;top:18px;width:23px;height:23px;border-radius:50%;background:#fff;box-shadow:0 0 0 5px #0a7de4 inset}
+.ak-logo-star{position:absolute;color:#0a7de4;font-size:18px}
+.ak-logo-star.s1{left:17px;top:26px}
+.ak-logo-star.s2{right:15px;top:14px}
+.ak-logo-child{position:absolute;left:31px;top:47px;color:#ffd02f;font-size:20px}
+.ak-register-logo-text{font-weight:900;font-size:30px;letter-spacing:.5px;color:#0878e8;line-height:1}
+.ak-register-logo-sub{font-weight:800;font-size:12px;letter-spacing:5px;color:#ffd02f;margin-top:5px}
+
+.ak-welcome h1{font-size:49px;line-height:1.12;margin:0 0 22px;font-weight:900;letter-spacing:-1.3px;color:var(--ak-blue-dark)}
+.ak-welcome p{font-size:22px;line-height:1.6;color:#52627d;margin:0;max-width:455px}
+.ak-mobile-top-illus{display:none}
+.ak-desktop-illus{margin-top:auto}
+
+.ak-illus{position:relative;width:500px;height:390px;margin-top:36px}
+.ak-illus:before{content:"";position:absolute;left:-40px;right:20px;bottom:18px;height:132px;background:linear-gradient(180deg,#cfe8ff,#eaf6ff);border-radius:60% 40% 0 0;opacity:.8}
+.ak-kids{position:absolute;left:86px;bottom:36px;width:330px;height:230px}
+.ak-kid{position:absolute;bottom:0;width:128px;height:184px}
+.ak-kid .head{position:absolute;top:0;left:20px;width:86px;height:86px;background:#ffd7b0;border-radius:50%;box-shadow:inset -8px -6px 0 rgba(229,139,77,.15)}
+.ak-kid .head:before{content:"";position:absolute;left:18px;top:42px;width:8px;height:8px;background:#222;border-radius:50%;box-shadow:35px 0 0 #222}
+.ak-kid .head:after{content:"";position:absolute;left:35px;top:58px;width:22px;height:10px;border-bottom:4px solid #d24e31;border-radius:0 0 20px 20px}
+.ak-kid .head span{position:absolute;left:-6px;top:-13px;width:92px;height:40px;background:#3d2518;border-radius:50% 55% 35% 50%;transform:rotate(-8deg)}
+.ak-kid .body{position:absolute;left:24px;top:78px;width:78px;height:92px;border-radius:35px 35px 20px 20px;background:#0b8dff}
+.ak-kid.boy{left:0}
+.ak-kid.girl{right:0;transform:scaleX(-1)}
+.ak-kid.girl .body{background:#ffc928}
+.ak-kid.girl .head span:after{content:"";position:absolute;right:-18px;top:14px;width:28px;height:28px;border-radius:50%;background:#3d2518}
+.ak-book-center{position:absolute;left:124px;bottom:42px;width:92px;height:70px;background:#006fd8;border-radius:8px;transform:rotate(-2deg);box-shadow:inset 42px 0 0 #078fff}
+.ak-book-center:before{content:"";position:absolute;left:43px;top:0;bottom:0;width:2px;background:#fff;opacity:.75}
+.ak-floating-icon{position:absolute;display:grid;place-items:center;border-radius:50%;font-weight:900}
+.ak-floating-icon.book{left:18px;top:80px;width:74px;height:74px;background:#e2f2ff;color:#0878e8;font-size:40px}
+.ak-floating-icon.chart{right:45px;top:120px;width:72px;height:72px;background:#fff3ef;color:#ff6558;font-size:34px}
+.ak-floating-icon.star{left:250px;top:78px;color:#ffc928;font-size:54px}
+.ak-floating-icon.heart{left:30px;top:215px;color:#96cef9;font-size:28px}
+
+.ak-register-card{width:min(100%,500px);background:rgba(255,255,255,.94);border:1px solid rgba(225,235,248,.95);border-radius:24px;padding:40px 48px 38px;box-shadow:var(--ak-shadow);backdrop-filter:blur(10px)}
+.ak-register-card h2{font-size:35px;margin:0 0 10px;font-weight:900;color:var(--ak-blue-dark)}
+.ak-register-card p{font-size:17px;color:var(--ak-muted);margin:0 0 26px}
+.ak-register-card label{display:block;font-weight:800;font-size:16px;margin:18px 0 10px;color:#14214b}
+.ak-input-wrap{height:56px;border:1px solid #dde7f2;border-radius:12px;background:#fff;display:flex;align-items:center;padding:0 16px;gap:12px;transition:.2s}
+.ak-input-wrap:focus-within{border-color:#0a87f5;box-shadow:0 0 0 4px rgba(8,120,232,.08)}
+.ak-input-wrap i{font-size:22px;color:#8a9ab4}
+.ak-input-wrap input{border:0;outline:0;width:100%;font-size:16px;color:var(--ak-text);background:transparent}
+.ak-input-wrap input::placeholder{color:#99a7ba}
+.ak-eye{border:0;background:transparent;color:#73829d;cursor:pointer;padding:4px}
+
+.ak-rules{margin:22px 0 8px;color:#697994;font-size:15px}
+.ak-rules-title{margin-bottom:12px;color:#687792;font-weight:650}
+.ak-rule-item{display:flex;align-items:center;gap:12px;margin:10px 0;font-weight:600;line-height:1.35}
+.ak-rule-item span{width:18px;height:18px;border-radius:50%;display:grid;place-items:center;background:#43c96e;color:#fff;font-size:12px;flex:0 0 auto}
+
+.ak-agree{display:flex!important;align-items:flex-start;gap:12px;margin:24px 0 22px!important;font-size:16px!important;line-height:1.55!important;font-weight:600!important;color:#6b7b96!important}
+.ak-agree input{width:20px;height:20px;margin-top:3px;accent-color:#0878e8;flex:0 0 auto}
+.ak-agree button{border:0;background:transparent;color:#0878e8;font-weight:900;cursor:pointer;padding:0}
+.ak-primary-btn{width:100%;height:60px;border:0;border-radius:12px;background:linear-gradient(135deg,#108dff,#006ddb);color:#fff;font-weight:900;font-size:18px;cursor:pointer;box-shadow:0 12px 25px rgba(0,119,230,.22);transition:.22s}
+.ak-primary-btn:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(0,119,230,.28)}
+.ak-primary-btn:disabled{opacity:.72;cursor:wait}
+.ak-divider{display:flex;align-items:center;gap:14px;margin:28px 0 18px;color:#7f8da5;font-size:15px}
+.ak-divider span{height:1px;background:#e6edf6;flex:1}
+.ak-divider em{font-style:normal}
+.ak-google-btn{height:58px;width:100%;border:1px solid #e1e8f2;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:12px;font-weight:850;color:#17234d;cursor:pointer}
+.ak-google-g{font-size:24px;font-weight:900;color:#ea4335}
+.ak-login-text{text-align:center;margin-top:26px;color:#6e7d96;font-size:16px}
+.ak-login-text button{border:0;background:transparent;color:#0878e8;font-weight:900;cursor:pointer}
+
+.ak-register-footer{position:absolute;z-index:3;left:50%;bottom:36px;transform:translateX(-50%);color:#7786a0;font-size:15px;white-space:nowrap}
+.ak-wave{position:absolute;left:-4%;bottom:-10%;width:75%;height:210px;border-radius:50% 50% 0 0;z-index:1}
+.ak-wave.blue{background:linear-gradient(135deg,#0d8fff,#006bd2);transform:rotate(8deg);bottom:-90px}
+.ak-wave.yellow{background:#ffd23f;height:105px;width:66%;bottom:-28px;left:7%;transform:rotate(8deg);opacity:.95}
+.ak-bg-star{position:absolute;color:#b8dcff;z-index:1;opacity:.75}
+.ak-bg-star.st1{right:18%;top:7%;font-size:36px}
+.ak-bg-star.st2{right:27%;top:14%;font-size:22px}
+.ak-bg-star.st3{left:18%;top:17%;font-size:23px}
+.ak-back-mobile{display:none}
+
+.ak-register-overlay{position:fixed;inset:0;background:rgba(13,22,39,.46);backdrop-filter:blur(2px);z-index:50;display:grid;place-items:center;padding:22px}
+.ak-loading-box{width:196px;min-height:172px;background:#fff;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.22);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+.ak-spinner{width:54px;height:54px;border-radius:50%;border:4px solid #d9ebff;border-top-color:#0878e8;border-right-color:#0878e8;animation:akSpin .8s linear infinite;margin-bottom:18px}
+.ak-loading-box strong{font-size:16px;font-weight:900;color:#071945}
+.ak-loading-box span{font-size:13px;color:#6e7d96;margin-top:8px}
+@keyframes akSpin{to{transform:rotate(360deg)}}
+
+@media (max-width: 900px){
+  .ak-register-page{padding:0;background:#fff;min-height:100dvh;overflow:auto}
+  .ak-register-shell{min-height:100dvh;border:0;border-radius:0;box-shadow:none;display:block;padding:46px 24px 32px;background:linear-gradient(180deg,#f4fbff 0%,#ffffff 38%,#f3faff 100%);overflow:visible}
+  .ak-register-shell:before,.ak-wave,.ak-register-footer{display:none}
+  .ak-back-mobile{display:grid;place-items:center;position:fixed;left:18px;top:22px;z-index:10;width:36px;height:36px;border-radius:50%;color:#0a2258;font-size:20px;background:rgba(255,255,255,.75);box-shadow:0 6px 18px rgba(18,66,128,.08)}
+  .ak-register-left{display:block}
+  .ak-register-logo{width:128px;margin:0 auto 18px}
+  .ak-register-logo-mark{width:92px;height:68px;border-top-width:6px}
+  .ak-register-logo-mark:before{left:28px;width:36px;height:43px}
+  .ak-register-logo-mark:after{left:43px;top:14px;width:17px;height:17px}
+  .ak-logo-star{font-size:13px}.ak-logo-child{font-size:15px;left:23px;top:34px}
+  .ak-register-logo-text{font-size:22px}.ak-register-logo-sub{font-size:8px;letter-spacing:4px}
+  .ak-desktop-illus{display:none}.ak-mobile-top-illus{display:block}
+  .ak-illus-mobile{width:100%;height:230px;margin:0 auto 18px}
+  .ak-illus-mobile .ak-kids{left:50%;transform:translateX(-50%) scale(.69);bottom:18px}
+  .ak-illus-mobile:before{left:0;right:0;bottom:2px;height:78px}
+  .ak-illus-mobile .ak-floating-icon.book{left:12%;top:24px;width:48px;height:48px;font-size:26px}
+  .ak-illus-mobile .ak-floating-icon.chart{right:12%;top:52px;width:48px;height:48px;font-size:23px}
+  .ak-illus-mobile .ak-floating-icon.star{left:47%;top:20px;font-size:40px}
+  .ak-illus-mobile .ak-floating-icon.heart{left:10%;top:118px;font-size:22px}
+  .ak-welcome h1{font-size:31px;line-height:1.1;letter-spacing:-.45px;margin:0 0 10px}
+  .ak-welcome p{font-size:15.5px;line-height:1.5;max-width:320px}
+  .ak-register-right{margin-top:26px}
+  .ak-register-card{width:100%;border-radius:18px;padding:26px 22px;box-shadow:0 12px 34px rgba(27,78,151,.12)}
+  .ak-register-card h2{font-size:27px}.ak-register-card p{font-size:14px;margin-bottom:20px}
+  .ak-register-card label{font-size:13px;margin:15px 0 8px}.ak-input-wrap{height:48px;border-radius:10px;padding:0 12px}.ak-input-wrap i{font-size:18px}.ak-input-wrap input{font-size:13px}
+  .ak-rules{font-size:12.5px;margin:18px 0 8px}.ak-rules-title{margin-bottom:10px}.ak-rule-item{gap:9px;margin:8px 0}.ak-rule-item span{width:15px;height:15px;font-size:10px}
+  .ak-agree{font-size:12.5px!important;margin:20px 0 18px!important;gap:9px!important}.ak-agree input{width:16px;height:16px}
+  .ak-primary-btn{height:50px;border-radius:10px;font-size:15px}.ak-divider{margin:22px 0 16px;font-size:12px}.ak-google-btn{height:50px;border-radius:10px;font-size:14px}.ak-login-text{font-size:13px;margin-top:24px}.ak-register-overlay{align-items:center}.ak-loading-box{width:168px;min-height:150px;border-radius:16px}.ak-spinner{width:46px;height:46px}.ak-bg-star{display:none}
+}
+
+@media (min-width: 901px) and (max-width: 1180px){
+  .ak-register-shell{grid-template-columns:1fr 430px;padding:44px 46px 84px}.ak-welcome h1{font-size:42px}.ak-welcome p{font-size:19px}.ak-illus{transform:scale(.86);transform-origin:left bottom}.ak-register-card{padding:34px 34px}.ak-register-logo{margin-bottom:42px}
+}
+
+@media (max-height: 780px) and (min-width: 901px){
+  .ak-register-shell{padding-top:32px;padding-bottom:58px}.ak-register-logo{margin-bottom:28px}.ak-welcome h1{font-size:40px}.ak-welcome p{font-size:18px}.ak-illus{transform:scale(.72);transform-origin:left bottom;margin-top:10px}.ak-register-card{padding:28px 38px}.ak-register-card h2{font-size:31px}.ak-register-card label{margin-top:12px}.ak-input-wrap{height:50px}.ak-rules{margin:14px 0 4px}.ak-agree{margin:16px 0!important}.ak-primary-btn{height:54px}.ak-divider{margin:18px 0 14px}.ak-google-btn{height:52px}.ak-login-text{margin-top:18px}.ak-register-footer{bottom:22px}
+}

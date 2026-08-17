@@ -1,0 +1,63 @@
+export const menuItems = [
+  { label: "Tổng quan", icon: "bi-house-door-fill", active: true },
+  { label: "Thông tin trẻ", icon: "bi-person-bounding-box" },
+  { label: "Ngân hàng mục tiêu", icon: "bi-bullseye" },
+  { label: "Kế hoạch can thiệp", icon: "bi-calendar2-check" },
+  { label: "Báo cáo can thiệp", icon: "bi-clipboard2-data" },
+  { label: "Chờ duyệt", icon: "bi-clock" },
+  { label: "Giỏ mục tiêu", icon: "bi-cart3" },
+];
+
+export const dashboardCards = [
+  {
+    id: 1,
+    title: "Ngân hàng mục tiêu",
+    desc: "Kho mục tiêu theo từng lĩnh vực phát triển.",
+    value: "128",
+    icon: "bi-bullseye",
+    type: "blue",
+    navigate: "bank",
+    subTitle: "Kho mục tiêu theo từng lĩnh vực phát triển",
+  },
+  {
+    id: 2,
+    title: "Kế hoạch can thiệp",
+    desc: "Danh sách kế hoạch can thiệp đã tạo.",
+    value: "12",
+    icon: "bi-calendar3",
+    type: "yellow",
+    navigate: "plan",
+    subTitle: "Danh sách kế hoạch can thiệp theo từng tháng",
+  },
+  {
+    id: 3,
+    title: "Báo cáo can thiệp",
+    desc: "Danh sách báo cáo đã thực hiện.",
+    value: "18",
+    icon: "bi-file-earmark-bar-graph-fill",
+    type: "blue",
+    navigate: "report",
+    subTitle: "Danh sách báo cáo can thiệp theo từng tháng",
+  },
+  {
+    id: 4,
+    title: "Chờ duyệt",
+    desc: "Kế hoạch và báo cáo đang chờ duyệt.",
+    value: "5",
+    icon: "bi-clock",
+    type: "yellow",
+    navigate: "pending",
+    subTitle: "Các kế hoạch và báo cáo đang chờ Giám đốc duyệt",
+  },
+  {
+    id: 5,
+    title: "Giỏ mục tiêu",
+    desc: "Các mục tiêu đã chọn chờ tạo kế hoạch.",
+    value: "7",
+    icon: "bi-cart3",
+    type: "blue",
+    navigate: "cart",
+    subTitle:
+      "Danh sách mục tiêu đã chọn. Bạn có thể tạo kế hoạch can thiệp từ giỏ mục tiêu",
+  },
+];
