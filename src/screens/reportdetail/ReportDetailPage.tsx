@@ -38,6 +38,7 @@ import {
 import CommentModal from "../modal/comment/CommentModal";
 import "./ReportDetailPage.css";
 import ReportTaskRow from "./ReportTaskRow";
+import { exportReportDocx } from "../../constants/exportReportDocx";
 
 export default function ReportDetailPage() {
   const [showComment, setShowComment] = useState(false);
@@ -176,6 +177,7 @@ export default function ReportDetailPage() {
   
   const handleExportWordBC = async () => {
     setLoadingOverLay(true);
+    
     const promiseItems = handleGroupReportWithField(reportTasks).map(
       async (reportTask: ReportTaskModel) => {
         const docSnap = await getDoc(
@@ -198,15 +200,21 @@ export default function ReportDetailPage() {
     );
     const result = await Promise.all(promiseItems);
 
-    exportWord(
-      {
-        rows: result,
-        title: report.title.trim(),
-        child: child?.fullName,
-        teacher: user?.fullName,
-      },
-      "/template_BC.docx",
-    );
+    // exportWord(
+    //   {
+    //     rows: result,
+    //     title: report.title.trim(),
+    //     child: child?.fullName,
+    //     teacher: user?.fullName,
+    //   },
+    //   "/template_BC.docx",
+    // );
+    await exportReportDocx({
+          rows: result as any,
+          title: report.title.trim(),
+          child: child?.fullName,
+          teacher: user?.fullName,
+        });
     setLoadingOverLay(false);
   };
   const handleApproved = () => {

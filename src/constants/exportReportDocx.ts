@@ -19,12 +19,9 @@ import { saveAs } from "file-saver";
 type ReportRow = {
   field: string;
   target: string;
+  intervention: string;
   content: string;
   total: string;
-  intervention1: string;
-  intervention2: string;
-  intervention3: string;
-  intervention4: string;
 };
 
 const border = {
@@ -42,10 +39,12 @@ const p = (
     italic?: boolean;
     size?: number;
     color?: string;
+    justify?: boolean;
   },
 ) =>
   new Paragraph({
-    alignment: options?.center ? AlignmentType.CENTER : AlignmentType.LEFT,
+    alignment: options?.justify ? AlignmentType.JUSTIFIED :
+      options?.center ? AlignmentType.CENTER : AlignmentType.LEFT,
     children: String(text || "")
       .split(/\r?\n/)
       .flatMap((line, index, arr) => [
@@ -72,6 +71,7 @@ const cell = (
     verticalTop?: boolean;
     italic?: boolean;
     size?: number;
+    justify?: boolean;
   },
 ) =>
   new TableCell({
@@ -89,6 +89,7 @@ const cell = (
         center: options?.center,
         italic: options?.italic,
         size: options?.size || 22,
+        justify: options?.justify,
       }),
     ],
   });
@@ -108,73 +109,51 @@ const groupByField = (rows: ReportRow[]) => {
 };
 
 const getLogoBuffer = async () => {
-  const res = await fetch("/NSXEdu-icon-512x512.png");
+  const res = await fetch("/icons/HVEdu-icon-512x512.png");
   return await res.arrayBuffer();
 };
 
 export async function exportReportDocx(data: {
   rows: ReportRow[];
   title: string;
-  subTitle: string;
   child?: string;
-  birthChild?: string;
   teacher?: string;
-  rangeTime?: string;
 }) {
   const groups = groupByField(data.rows);
   const logoBuffer = await getLogoBuffer();
 
   const tableRows: TableRow[] = [
     new TableRow({
-      tableHeader: true,
+      tableHeader: false,
       children: [
-        cell("STT", 4, { bold: true, center: true, rowSpan: 2, size: 23 }),
-        cell("Lĩnh\nvực", 11, {
+        cell("STT", 4, { bold: true, center: true, size: 23 }),
+        cell("Lĩnh\nvực", 10, {
           bold: true,
           center: true,
-          rowSpan: 2,
           size: 23,
         }),
-        cell("Mục tiêu/Hoạt động\ntrọng tâm", 30, {
+        cell("Mục tiêu", 23, {
           bold: true,
           center: true,
-          rowSpan: 2,
           size: 23,
         }),
-        cell("Chiến lược", 20, {
+        cell("Mức độ hỗ trợ", 13, {
           bold: true,
           center: true,
-          rowSpan: 2,
           size: 23,
         }),
-        cell("Mức độ trẻ thực hiện", 16, {
+        cell("Nội dung", 23, {
           bold: true,
           center: true,
-          columnSpan: 4,
           size: 23,
         }),
-        cell("Đánh giá", 19, {
+                cell("Nhận xét", 27, {
           bold: true,
           center: true,
-          rowSpan: 2,
           size: 23,
         }),
       ],
-    }),
-    new TableRow({
-      tableHeader: true,
-      children: [
-        cell("T1", 4, { bold: true, center: true }),
-        cell("T2", 4, { bold: true, center: true }),
-        cell("T3", 4, { bold: true, center: true }),
-        cell("T4", 4, { bold: true, center: true }),
-        // cell("T1", 3.2, { bold: true, center: true }),
-        // cell("T2", 3.2, { bold: true, center: true }),
-        // cell("T3", 3.2, { bold: true, center: true }),
-        // cell("T4", 3.2, { bold: true, center: true }),
-        // cell("T5", 3.2, { bold: true, center: true }),
-      ],
-    }),
+    })
   ];
 
   groups.forEach((group, groupIndex) => {
@@ -190,7 +169,7 @@ export async function exportReportDocx(data: {
                     rowSpan: group.items.length,
                     verticalTop: true,
                   }),
-                  cell(group.field, 11, {
+                  cell(group.field, 10, {
                     bold: true,
                     center: true,
                     rowSpan: group.items.length,
@@ -199,25 +178,24 @@ export async function exportReportDocx(data: {
                 ]
               : []),
 
-            cell(`${itemIndex + 1}. ${item.target}`, 30, {
+            cell(`${itemIndex + 1}. ${item.target}`, 23, {
+              verticalTop: true,
+              justify: true,
+            }),
+
+            cell(item.intervention || "", 13, {
               verticalTop: true,
             }),
 
-            cell(item.content || "", 20, {
+            cell(item.content || "", 23, {
               verticalTop: true,
+              justify: true,
             }),
 
-            // cell("", 3.2, { center: true }),
-            // cell("", 3.2, { center: true }),
-            // cell("", 3.2, { center: true }),
-            // cell("", 3.2, { center: true }),
-            // cell("", 3.2, { center: true }),
-            cell(item.intervention1 || "", 4, { center: true }),
-            cell(item.intervention2 || "", 4, { center: true }),
-            cell(item.intervention3 || "", 4, { center: true }),
-            cell(item.intervention4 || "", 4, { center: true }),
-
-            cell(item.total || "", 19, { verticalTop: true }),
+            cell(item.total || "", 27, {
+              verticalTop: true,
+              justify: true,
+            }),
           ],
         }),
       );
@@ -258,10 +236,81 @@ export async function exportReportDocx(data: {
             borders: border,
             verticalAlign: VerticalAlign.CENTER,
             children: [
-              p("TRUNG TÂM TÂM LÝ - GIÁO DỤC NGÔI SAO XANH", {
+              p("TRUNG TÂM HỖ TRỢ PHÁT TRIỂN GIÁO DỤC VÀ HOÀ NHẬP HY VỌNG", {
                 bold: true,
-                color: "008000",
+                color: "0058B0",
                 size: 28,
+              }),
+            ],
+          }),
+        ],
+      }),
+    ],
+  });
+
+   const footerTable = new Table({
+    width: { size: 100, type: WidthType.PERCENTAGE },
+    borders: {
+      top: { style: BorderStyle.NONE },
+      bottom: { style: BorderStyle.NONE},
+      left: { style: BorderStyle.NONE},
+      right: { style: BorderStyle.NONE },
+      insideHorizontal: { style: BorderStyle.NONE },
+      insideVertical: { style: BorderStyle.NONE },
+    },
+    rows: [
+      new TableRow({
+        children: [
+          new TableCell({
+            width: { size: 50, type: WidthType.PERCENTAGE },
+            verticalAlign: VerticalAlign.CENTER,
+            children: [
+              p(`Giám đốc`, {
+            center: true,
+            size: 24,
+          }),
+
+          new Paragraph({
+            text: "",
+            spacing: {
+              after: 300,
+            },
+          }),
+          new Paragraph({
+            text: "",
+            spacing: {
+              after: 300,
+            },
+          }),
+           p(`Nguyễn Yến Linh`, {
+            center: true,
+            size: 24,
+          }),
+            ],
+          }),
+          new TableCell({
+            width: { size: 50, type: WidthType.PERCENTAGE },
+            verticalAlign: VerticalAlign.CENTER,
+            children: [
+              p("Giáo viên can thiệp", {
+            center: true,
+                size: 24,
+              }),
+              new Paragraph({
+            text: "",
+            spacing: {
+              after: 300,
+            },
+          }),
+          new Paragraph({
+            text: "",
+            spacing: {
+              after: 300,
+            },
+          }),
+ p(data.teacher || 'GV', {
+            center: true,
+                size: 24,
               }),
             ],
           }),
@@ -275,21 +324,52 @@ export async function exportReportDocx(data: {
       {
         properties: {
           page: {
-            size: { orientation: PageOrientation.LANDSCAPE },
+            size: { orientation: PageOrientation.PORTRAIT },
             margin: { top: 500, right: 500, bottom: 500, left: 500 },
           },
         },
         children: [
-          headerTable,
+           p("TRUNG TÂM HỖ TRỢ PHÁT TRIỂN GIÁO DỤC VÀ HOÀ NHẬP\nHY VỌNG", {
+                bold: true,
+                color: "0058B0",
+                size: 28,
+                center: true,
+              }),
+              new Paragraph({
+                alignment: AlignmentType.CENTER,
+                children: [
+                  new ImageRun({
+                    data: logoBuffer,
+                    transformation: {
+                      width: 120,
+                      height: 120,
+                    },
+                    type: "png",
+                  }),
+                ],
+              }), 
+               new Paragraph({
+            text: "",
+            spacing: {
+              after: 6,
+            },
+          }),
 
-          p(`ĐÁNH GIÁ CAN THIỆP CÁ NHÂN TUẦN ${data.subTitle} THÁNG ${data.title}`, {
+          p(`BÁO CÁO CAN THIỆP THÁNG ${data.title}`, {
             bold: true,
             center: true,
             size: 30,
+            color: "0058B0",
+          }),
+          new Paragraph({
+            text: "",
+            spacing: {
+              after: 6,
+            },
           }),
 
-          p(`Thời gian: ${data.rangeTime || ""}`, {
-            italic: true,
+          p(`Bé: ${data.child || "tre"}`, {
+            bold: true,
             center: true,
             size: 24,
           }),
@@ -297,53 +377,27 @@ export async function exportReportDocx(data: {
           new Paragraph({
             text: "",
             spacing: {
-              after: 12,
+              after: 100,
             },
           }),
-
-          new Paragraph({
-            children: [
-              new TextRun({
-                text: `Học sinh: ${data.child || ""}`,
-                bold: true,
-                size: 24,
-                font: "Times New Roman",
-              }),
-              new TextRun({
-                text: `                                          Ngày sinh: ${data.birthChild || ""}`,
-                bold: true,
-                size: 24,
-                font: "Times New Roman",
-              }),
-            ],
-          }),
-
-          new Paragraph({
-            text: "",
-            spacing: {
-              after: 12,
-            },
-          }),
-
-          p(
-            "Mức độ: 0. Không thực hiện             1. Thực hiện với nhiều sự hỗ trợ             2. Thực hiện với ít sự hỗ trợ             3. Tự thực hiện",
-            {
-              italic: true,
-              size: 23,
-            },
-          ),
-
-          new Paragraph({ text: "" }),
-
           new Table({
             width: { size: 100, type: WidthType.PERCENTAGE },
             rows: tableRows,
           }),
+          new Paragraph({
+            text: "",
+            spacing: {
+              after: 100,
+            },
+          }),
+
+footerTable
+
         ],
       },
     ],
   });
 
   const blob = await Packer.toBlob(doc);
-  saveAs(blob, `ĐG.${data.title}.${data.child || "tre"}.docx`);
+  saveAs(blob, `BC.${data.title}.${data.child || "tre"}.docx`);
 }

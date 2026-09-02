@@ -36,12 +36,14 @@ const p = (
     bold?: boolean;
     center?: boolean;
     italic?: boolean;
+    justify?: boolean;
     size?: number;
     color?: string;
   },
 ) =>
   new Paragraph({
-    alignment: options?.center ? AlignmentType.CENTER : AlignmentType.LEFT,
+    alignment: options?.justify ? AlignmentType.JUSTIFIED :
+      options?.center ? AlignmentType.CENTER : AlignmentType.LEFT,
     children: String(text || "")
       .split(/\r?\n/)
       .flatMap((line, index, arr) => [
@@ -68,6 +70,7 @@ const cell = (
     verticalTop?: boolean;
     italic?: boolean;
     size?: number;
+    justify?: boolean;
   },
 ) =>
   new TableCell({
@@ -85,6 +88,7 @@ const cell = (
         center: options?.center,
         italic: options?.italic,
         size: options?.size || 22,
+        justify: options?.justify,
       }),
     ],
   });
@@ -170,6 +174,7 @@ export async function exportPlanDocx(data: {
 
             cell(`${itemIndex + 1}. ${item.target}`, 35, {
               verticalTop: true,
+              justify: true,
             }),
 
             cell(item.intervention || "", 10, {
@@ -178,6 +183,7 @@ export async function exportPlanDocx(data: {
 
             cell(item.content || "", 35, {
               verticalTop: true,
+              justify: true,
             }),
           ],
         }),
@@ -263,6 +269,13 @@ export async function exportPlanDocx(data: {
               after: 300,
             },
           }),
+          
+          new Paragraph({
+            text: "",
+            spacing: {
+              after: 300,
+            },
+          }),
            p(`Nguyễn Yến Linh`, {
             center: true,
             size: 24,
@@ -278,6 +291,13 @@ export async function exportPlanDocx(data: {
                 size: 24,
               }),
               new Paragraph({
+            text: "",
+            spacing: {
+              after: 300,
+            },
+          }),
+          
+          new Paragraph({
             text: "",
             spacing: {
               after: 300,
@@ -362,7 +382,7 @@ export async function exportPlanDocx(data: {
           new Paragraph({
             text: "",
             spacing: {
-              after: 36,
+              after: 100,
             },
           }),
 

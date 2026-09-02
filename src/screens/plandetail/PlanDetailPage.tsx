@@ -20,7 +20,6 @@ import {
   handleToastSuccess,
 } from "../../constants/handleToast";
 import { calculateAgeText, icon512 } from "../../constants/info";
-import { exportWord } from "../../exportFile/WordExport";
 import { db, functions } from "../../firebase.config";
 import { PlanTaskModel } from "../../models";
 import {
@@ -135,7 +134,10 @@ export default function PlanDetailPage() {
   };
 
   // ----------------
-  const handleExportWordKH = () => {
+  const handleExportWordKH = async () => {
+    
+    setLoadingOverLay(true);
+
     const items = hanldeGroupPlanWithField(planTasks).map(
       (planTask: PlanTaskModel) => {
         return {
@@ -148,21 +150,15 @@ export default function PlanDetailPage() {
         };
       },
     );
-    // exportWord(
-    //   {
-    //     rows: items,
-    //     title: plan.title.trim(),
-    //     child: child?.fullName,
-    //     teacher: user?.fullName,
-    //   },
-    //   "/template_KH.docx",
-    // );
-    exportPlanDocx({
+    
+   await exportPlanDocx({
       rows: items,
       title: plan.title.trim(),
       child: child?.fullName,
       teacher: user?.fullName,
     });
+    
+    setLoadingOverLay(false);
   };
   const handleDeletePlan = async () => {
     if (!plan) return;
