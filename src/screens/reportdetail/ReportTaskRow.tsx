@@ -6,7 +6,7 @@ export default function ReportTaskRow({
   targetMap,
   fieldMap,
   planTaskMap,
-  onChangeTotal,isPending
+  onChangeTotal, isPending
 }: any) {
   return (
     <div className="report-task-row">
@@ -34,7 +34,8 @@ export default function ReportTaskRow({
       </div>
       <div className="report-col summary-cell">
         <textarea
-        disabled={!isPending}
+          style={{ fieldSizing: "content" }}
+          disabled={!isPending}
           rows={4}
           placeholder="Nhập đánh giá kết quả thực hiện mục tiêu..."
           value={item.content || ""}

@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { getToneTheme, getUIForBank } from "../../constants/info";
 import { useInterventionStore } from "../../zustand";
 import { getRandomItem } from "./cartDemoData";
@@ -10,6 +11,10 @@ export default function CartDemoCard({
 }: any) {
   const themes = getToneTheme();
   const { interventions } = useInterventionStore();
+  
+  const filteredInterventions = useMemo(() => {
+    return interventions.sort((a, b) => a.level - b.level);
+  }, [interventions]);
 
   return (
     <article className={`cart-demo-card tone-${themes.name}`}>
@@ -64,7 +69,7 @@ export default function CartDemoCard({
           className="support-select"
         >
           <option value="">Chọn mức độ</option>
-          {interventions.map((_) => (
+          {filteredInterventions.map((_) => (
             <option value={_.name} key={_.level}>
               {_.level === 1
                 ? "🟥"

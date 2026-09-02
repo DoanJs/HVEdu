@@ -58,13 +58,13 @@ button {
 
 .pending-card.plan {
   background: linear-gradient(135deg, #edf8ff 0%, #f9fdff 70%);
-  --main: #108fe8;
+  --main: #0058B0;
   --soft: #e8f6ff;
 }
 
 .pending-card.report {
   background: linear-gradient(135deg, #fff1f6 0%, #fffafb 70%);
-  --main: #f05b91;
+  --main: #F8B800;
   --soft: #fff0f5;
 }
 

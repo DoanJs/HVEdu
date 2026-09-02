@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { getRandomItem } from "./reportData";
 import moment from "moment";
 import { handleTimeStampFirestore } from "../../constants/convertTimeStamp";
+import { icon512 } from "../../constants/info";
 
 function ReportIllustration({ type = "bar" }) {
   return (
@@ -93,7 +94,7 @@ export default function ReportCard({ item, teacherMap, newestPlan, total }: any)
         <p>Giáo viên thực hiện</p>
         <div className="teacher-row">
           <div className="teacher-info">
-            <img src={teacherMap[item.authorId]?.avatar} alt="teacher" />
+            <img src={teacherMap[item.authorId]?.avatar || icon512} alt="teacher" />
             <div>
               <strong>{teacherMap[item.authorId]?.fullName}</strong>
               <span>Chức vụ: {teacherMap[item.authorId]?.position}</span>

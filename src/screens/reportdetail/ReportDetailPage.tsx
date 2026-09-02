@@ -438,7 +438,7 @@ export default function ReportDetailPage() {
           <div>
             <b>GV thực hiện:</b>
             <span>
-              <img src={teacherMap[report.authorId]?.avatar} alt="teacher" />
+              <img src={teacherMap[report.authorId]?.avatar || icon512} alt="teacher" />
               {teacherMap[report.authorId]?.fullName}
             </span>
           </div>

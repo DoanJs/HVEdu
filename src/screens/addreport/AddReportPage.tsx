@@ -375,6 +375,7 @@ export default function AddReportPage() {
       }
     } finally {
       setLoadingOverLay(false);
+      setSelectedPlan(null);
     }
   };
   const handleSaveReportSaved = async () => {
@@ -449,6 +450,7 @@ export default function AddReportPage() {
       }
     } finally {
       setLoadingOverLay(false);
+      setSelectedPlan(null);
     }
   };
   const handleChangeTotal = (id: string, value: string) => {

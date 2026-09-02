@@ -1,7 +1,7 @@
 import moment from "moment";
 import { Link } from "react-router-dom";
 import { handleTimeStampFirestore } from "../../constants/convertTimeStamp";
-import { pendingPlan, pendingReport } from "../../constants/info";
+import { icon512, pendingPlan, pendingReport } from "../../constants/info";
 import { Message } from "iconsax-react";
 
 function PlanIllustration() {
@@ -94,7 +94,7 @@ export default function PendingCard({ item, teacherMap }: any) {
           <span>Giáo viên thực hiện</span>
           <div className="teacher-mini">
             <img
-              src={teacherMap[item.authorId]?.avatar}
+              src={teacherMap[item.authorId]?.avatar || icon512}
               alt={"pending-teacher"}
             />
             <strong>{teacherMap[item.authorId]?.fullName}</strong>

@@ -1,6 +1,6 @@
 import { signOut } from "firebase/auth";
-import { onValue, ref, set, remove } from "firebase/database";
-import { serverTimestamp, where } from "firebase/firestore";
+import { onValue, ref, remove, set } from "firebase/database";
+import { where } from "firebase/firestore";
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { query_users } from "../../constants/firebase/query/Index";
@@ -20,13 +20,9 @@ import {
   useUserStore,
 } from "../../zustand";
 import AddChildModal from "../modal/addChild/AddChildModal";
+import AddTeacherModal from "../modal/addTeacher/AddTeacherModal";
 import ChildrenCard from "./ChildrenCard";
 import "./ChildrenPage.css";
-import { data } from "../../constants/database/data";
-import { addDocData } from "../../constants/firebase/addDocData";
-import { data25TieuChi } from "../../constants/database/data25TieuChiFull";
-import AddTeacherModal from "../modal/addTeacher/AddTeacherModal";
-import { dataGiacQuan } from "../../constants/database/dataGiacQuan";
 
 export default function ChildrenPage() {
   const navigate = useNavigate();

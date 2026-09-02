@@ -39,6 +39,7 @@ import {
 import CommentModal from "../modal/comment/CommentModal";
 import "./PlanDetailPage.css";
 import PlanTaskRow from "./PlanTaskRow";
+import { exportPlanDocx } from "../../constants/exportPlanDocx";
 
 export default function PlanDetailPage() {
   const [showComment, setShowComment] = useState(false);
@@ -147,15 +148,21 @@ export default function PlanDetailPage() {
         };
       },
     );
-    exportWord(
-      {
-        rows: items,
-        title: plan.title.trim(),
-        child: child?.fullName,
-        teacher: user?.fullName,
-      },
-      "/template_KH.docx",
-    );
+    // exportWord(
+    //   {
+    //     rows: items,
+    //     title: plan.title.trim(),
+    //     child: child?.fullName,
+    //     teacher: user?.fullName,
+    //   },
+    //   "/template_KH.docx",
+    // );
+    exportPlanDocx({
+      rows: items,
+      title: plan.title.trim(),
+      child: child?.fullName,
+      teacher: user?.fullName,
+    });
   };
   const handleDeletePlan = async () => {
     if (!plan) return;
@@ -393,7 +400,7 @@ export default function PlanDetailPage() {
             <span>Nội dung can thiệp</span>
           </div>
           <div className="plan-table-body">
-            {planTasks.map((item, index) => (
+            {hanldeGroupPlanWithField(planTasks).map((item, index) => (
               <PlanTaskRow
                 key={item.id}
                 item={item}
@@ -417,7 +424,7 @@ export default function PlanDetailPage() {
               <>
                 <div className="review-person">
                   <img
-                    src={teacherMap[myComments[0].authorId]?.avatar}
+                    src={teacherMap[myComments[0].authorId]?.avatar || icon512}
                     alt="reviewer"
                   />
                   <div>
