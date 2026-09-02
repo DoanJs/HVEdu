@@ -9,9 +9,10 @@ import {
 import { httpsCallable } from "firebase/functions";
 import moment from "moment";
 import { useEffect, useMemo, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { convertTargetField } from "../../constants/convertTargetAndField";
 import { handleTimeStampFirestore } from "../../constants/convertTimeStamp";
+import { exportReportDocx } from "../../constants/exportReportDocx";
 import { addDocData } from "../../constants/firebase/addDocData";
 import { getDocsData } from "../../constants/firebase/getDocsData";
 import { updateDocData } from "../../constants/firebase/updateDocData";
@@ -21,7 +22,6 @@ import {
   handleToastSuccess,
 } from "../../constants/handleToast";
 import { calculateAgeText, icon512 } from "../../constants/info";
-import { exportWord } from "../../exportFile/WordExport";
 import { db, functions } from "../../firebase.config";
 import { PlanTaskModel, ReportTaskModel } from "../../models";
 import {
@@ -38,7 +38,6 @@ import {
 import CommentModal from "../modal/comment/CommentModal";
 import "./ReportDetailPage.css";
 import ReportTaskRow from "./ReportTaskRow";
-import { exportReportDocx } from "../../constants/exportReportDocx";
 
 export default function ReportDetailPage() {
   const [showComment, setShowComment] = useState(false);
@@ -200,15 +199,6 @@ export default function ReportDetailPage() {
     );
     const result = await Promise.all(promiseItems);
 
-    // exportWord(
-    //   {
-    //     rows: result,
-    //     title: report.title.trim(),
-    //     child: child?.fullName,
-    //     teacher: user?.fullName,
-    //   },
-    //   "/template_BC.docx",
-    // );
     await exportReportDocx({
           rows: result as any,
           title: report.title.trim(),

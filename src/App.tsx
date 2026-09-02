@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import LoadingOverlay from "./components/LoadingOverLay";
-import RegisterPage from "./ex/register/RegisterPage";
 import { auth, db } from "./firebase.config";
 import { usePresence } from "./hooks/usePresence";
 import AddReportPage from "./screens/addreport/AddReportPage";
@@ -25,6 +24,7 @@ import SplashPage from "./screens/splash/SplashPage";
 import TargetPage from "./screens/target/TargetPage";
 import UserDetailPage from "./screens/userdetail/UserDetailPage";
 import { useLoadingOverLayStore, useUserStore } from "./zustand";
+import RegisterPage from "./screens/register/RegisterPage";
 
 type AuthState = {
   user: User | null;
