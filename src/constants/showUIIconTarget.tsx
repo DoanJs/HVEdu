@@ -26,7 +26,7 @@ export const showUIIconTarget = (title: string) => {
       result = "taptrungchuy.png";
       break;
     default:
-      result = "HBMEdu-icon-512x512.png";
+      result = "HVEdu-icon-512x512.png";
       break;
   }
   return result;

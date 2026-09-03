@@ -27,13 +27,18 @@ export const bank_vdt = "/images/vandongtinh.png";
 export const bank_vdtho = "/images/vandongtho.png";
 export const bank_tnn= "/images/tienngonngu.png";
 export const bank_gt= "/images/giaotiep.png";
-export const bank_vc= "/images/vuichoi.png";
+export const bank_knc= "/images/kynangchoi.png";
 export const bank_tpv= "/images/tuphucvu.png";
 export const bank_thd= "/images/tienhocduong.png";
 export const bank_hn= "/images/hocnhom.png";
 export const bank_qs= "/images/quansat.png";
 export const bank_ca= "/images/chinham.png";
 export const bank_gq= "/images/giacquan.png";
+export const bank_ctnn= "/images/canthiepnhomnho.png";
+export const bank_ctty= "/images/ttcy.png";
+export const bank_nt= "/images/nhanthuc.png";
+export const bank_knbc= "/images/kynangbatchuoc.png";
+export const bank_knxh= "/images/kynangxahoi.png";
 
 export const dashboardMenu = "/images/dashboard-menu.png";
 export const splash = "/images/splash.png";
@@ -45,7 +50,7 @@ export const getRandomAvatar = () => {
   const array = [
     { icon: bank_tnn },
     { icon: bank_gt },
-    { icon: bank_vc },
+    { icon: bank_knc },
     { icon: bank_tpv },
     { icon: bank_thd },
     { icon: bank_vdtho },
@@ -159,7 +164,7 @@ export const fieldOrder = [
   "Yi5J6gNI13S9zWfQZw8e", // Giao tiếp
   "wP9FYxPtWil2Ss3Mm06S", // Ngôn ngữ hiểu
   "sWobMN7VAWLtgDdxKP2n", // Ngôn ngữ diễn đạt
-  "TM6PVKuFYIlbUkfOeiM0", // Vui chơi
+  "TM6PVKuFYIlbUkfOeiM0", // Kỷ năng chơi
   "8ftbSbuOgqf66XENkw2j", // Vận động thô
   "rPZHRivhLCsJ6bECFC0O", // Vận động tinh
   "2tWH3H8idQC9WytyqZld", // Tự phục vụ
@@ -169,6 +174,18 @@ export const fieldOrder = [
   "hvY1X9m5VlJQpdlkwfOc", // Chỉnh âm
   "1pTeKHmQVYVZt2UjfCc3", // Giác quan
 ];
+
+// 1. Ngôn ngữ hiểu = wP9FYxPtWil2Ss3Mm06S
+// 2. Ngôn ngữ diễn đạt = sWobMN7VAWLtgDdxKP2n
+// 3. Kỷ năng xã hội = 3tKv2Duu2LNUaLRkttsD
+// 4. Kỷ năng bắt chước = sJJmAZJIrVSfJBcE1p3k
+// 5. Nhận thức = fe2XJg4GiKu4CQWz19Wp
+// 5. Kỷ năng chơi = TM6PVKuFYIlbUkfOeiM0
+// 6. Vận động tinh = rPZHRivhLCsJ6bECFC0O
+// 7. Vận động thô = 8ftbSbuOgqf66XENkw2j
+// 8. Tập trung chú ý = R0P9By4XA63tO3QIJTMT
+// 9. Can thiệp nhóm nhỏ 2–3 trẻ = yByjUVCWniqVshiWLn8r
+
 
 // functions:
 export const calculateAgeText = (dateString: string | undefined): string => {
@@ -208,7 +225,6 @@ export const getUIForBank = (fieldName: string) => {
       break;
     case "Học nhóm":
       icon = bank_hn;
-      desc =
       color = "orange";
       break;
     case "Chỉnh âm":
@@ -240,8 +256,8 @@ export const getUIForBank = (fieldName: string) => {
       icon = bank_vdt;
       color = "blue";
       break;
-    case "Vui chơi":
-      icon = bank_vc;
+    case "Kỷ năng chơi":
+      icon = bank_knc;
       color = "pink";
       break;
     case "Quan sát, chú ý, lắng nghe":
@@ -251,6 +267,26 @@ export const getUIForBank = (fieldName: string) => {
     case "Giác quan":
       icon = bank_gq;
       color = "blue";
+      break;
+    case "Can thiệp nhóm nhỏ 2–3 trẻ":
+      icon = bank_ctnn;
+      color = "orange";
+      break;
+    case "Tập trung chú ý":
+      icon = bank_ctty;
+      color = "green";
+      break;
+    case "Nhận thức":
+      icon = bank_nt;
+      color = "pink";
+      break;
+    case "Kỷ năng bắt chước":
+      icon = bank_knbc;
+      color = "orange";
+      break;
+    case "Kỷ năng xã hội":
+      icon = bank_knxh;
+      color = "green";
       break;
 
     default:

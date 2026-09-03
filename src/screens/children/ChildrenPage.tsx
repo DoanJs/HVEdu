@@ -1,6 +1,6 @@
 import { signOut } from "firebase/auth";
 import { onValue, ref, remove, set } from "firebase/database";
-import { where } from "firebase/firestore";
+import { serverTimestamp, where } from "firebase/firestore";
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { query_users } from "../../constants/firebase/query/Index";
@@ -23,6 +23,8 @@ import AddChildModal from "../modal/addChild/AddChildModal";
 import AddTeacherModal from "../modal/addTeacher/AddTeacherModal";
 import ChildrenCard from "./ChildrenCard";
 import "./ChildrenPage.css";
+import { dataTarget } from "../../constants/database/target";
+import { addDocData } from "../../constants/firebase/addDocData";
 
 export default function ChildrenPage() {
   const navigate = useNavigate();
@@ -84,7 +86,7 @@ export default function ChildrenPage() {
 
   // -----------------test add data-----------------
   // const addDataToFirebase = async () => {
-  //   const promiseItems = dataGiacQuan.map((_) =>
+  //   const promiseItems = dataTarget.map((_) =>
   //     addDocData({
   //       nameCollect: "targets",
   //       value: {
