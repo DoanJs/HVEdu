@@ -25,6 +25,7 @@ import ChildrenCard from "./ChildrenCard";
 import "./ChildrenPage.css";
 import { dataTarget } from "../../constants/database/target";
 import { addDocData } from "../../constants/firebase/addDocData";
+import { dataChild } from "../../constants/database/child";
 
 export default function ChildrenPage() {
   const navigate = useNavigate();
@@ -86,16 +87,19 @@ export default function ChildrenPage() {
 
   // -----------------test add data-----------------
   // const addDataToFirebase = async () => {
-  //   const promiseItems = dataTarget.map((_) =>
+  //   const promiseItems = dataChild.map((_) =>
   //     addDocData({
-  //       nameCollect: "targets",
+  //       nameCollect: "children",
   //       value: {
   //         ..._,
+  //         status: "studying",
+  //         shortName: "",
+  //         avatar: "",
 
   //         createAt: serverTimestamp(),
   //         updateAt: serverTimestamp(),
   //       },
-  //       metaDoc: "targets",
+  //       metaDoc: "children",
   //     }),
   //   );
   //   await Promise.all(promiseItems);

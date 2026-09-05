@@ -11,7 +11,8 @@ export interface PlanCardTheme {
 }
 
 // variables:
-export const CENTER_NAME = "TRUNG TÂM HỖ TRỢ VÀ PHÁT TRIỂN GIÁO DỤC HOÀ NHẬP HY VỌNG";
+export const CENTER_NAME =
+  "TRUNG TÂM HỖ TRỢ VÀ PHÁT TRIỂN GIÁO DỤC HOÀ NHẬP HY VỌNG";
 export const FIRST_NAME = "TRUNG TÂM HỖ TRỢ VÀ PHÁT TRIỂN GIÁO DỤC HOÀ NHẬP";
 export const LAST_NAME = "HY VỌNG";
 export const activeCategoryDefault = "Jx8XkpdlcZXrrzFH6bQX"; //HVEdu
@@ -25,20 +26,20 @@ export const bank_nnh = "/images/ngonnguhieu.png";
 export const bank_nndd = "/images/ngonngudiendat.png";
 export const bank_vdt = "/images/vandongtinh.png";
 export const bank_vdtho = "/images/vandongtho.png";
-export const bank_tnn= "/images/tienngonngu.png";
-export const bank_gt= "/images/giaotiep.png";
-export const bank_knc= "/images/kynangchoi.png";
-export const bank_tpv= "/images/tuphucvu.png";
-export const bank_thd= "/images/tienhocduong.png";
-export const bank_hn= "/images/hocnhom.png";
-export const bank_qs= "/images/quansat.png";
-export const bank_ca= "/images/chinham.png";
-export const bank_gq= "/images/giacquan.png";
-export const bank_ctnn= "/images/canthiepnhomnho.png";
-export const bank_ctty= "/images/ttcy.png";
-export const bank_nt= "/images/nhanthuc.png";
-export const bank_knbc= "/images/kynangbatchuoc.png";
-export const bank_knxh= "/images/kynangxahoi.png";
+export const bank_tnn = "/images/tienngonngu.png";
+export const bank_gt = "/images/giaotiep.png";
+export const bank_knc = "/images/kynangchoi.png";
+export const bank_tpv = "/images/tuphucvu.png";
+export const bank_thd = "/images/tienhocduong.png";
+export const bank_hn = "/images/hocnhom.png";
+export const bank_qs = "/images/quansat.png";
+export const bank_ca = "/images/chinham.png";
+export const bank_gq = "/images/giacquan.png";
+export const bank_ctnn = "/images/canthiepnhomnho.png";
+export const bank_ctty = "/images/ttcy.png";
+export const bank_nt = "/images/nhanthuc.png";
+export const bank_knbc = "/images/kynangbatchuoc.png";
+export const bank_knxh = "/images/kynangxahoi.png";
 
 export const dashboardMenu = "/images/dashboard-menu.png";
 export const splash = "/images/splash.png";
@@ -160,13 +161,19 @@ const planCardThemes = [
 ];
 //HVEdu
 export const fieldOrder = [
-  "Jx8XkpdlcZXrrzFH6bQX", // Tiền ngôn ngữ
-  "Yi5J6gNI13S9zWfQZw8e", // Giao tiếp
   "wP9FYxPtWil2Ss3Mm06S", // Ngôn ngữ hiểu
   "sWobMN7VAWLtgDdxKP2n", // Ngôn ngữ diễn đạt
+  "3tKv2Duu2LNUaLRkttsD", // Kỷ năng xã hội
+  "sJJmAZJIrVSfJBcE1p3k", // Kỷ năng bắt chước
+  "fe2XJg4GiKu4CQWz19Wp", // Nhận thức
   "TM6PVKuFYIlbUkfOeiM0", // Kỷ năng chơi
-  "8ftbSbuOgqf66XENkw2j", // Vận động thô
   "rPZHRivhLCsJ6bECFC0O", // Vận động tinh
+  "8ftbSbuOgqf66XENkw2j", // Vận động thô
+  "R0P9By4XA63tO3QIJTMT", // Tập trung chú ý
+  "yByjUVCWniqVshiWLn8r", // Can thiệp nhóm nhỏ 2–3 trẻ
+
+  "Jx8XkpdlcZXrrzFH6bQX", // Tiền ngôn ngữ
+  "Yi5J6gNI13S9zWfQZw8e", // Giao tiếp
   "2tWH3H8idQC9WytyqZld", // Tự phục vụ
   "jRtks7uZ5jKw1QNLbqhu", // Tiền học đường
   "mamyqwbjpOPb3jbnYCPN", // Học nhóm
@@ -174,18 +181,6 @@ export const fieldOrder = [
   "hvY1X9m5VlJQpdlkwfOc", // Chỉnh âm
   "1pTeKHmQVYVZt2UjfCc3", // Giác quan
 ];
-
-// 1. Ngôn ngữ hiểu = wP9FYxPtWil2Ss3Mm06S
-// 2. Ngôn ngữ diễn đạt = sWobMN7VAWLtgDdxKP2n
-// 3. Kỷ năng xã hội = 3tKv2Duu2LNUaLRkttsD
-// 4. Kỷ năng bắt chước = sJJmAZJIrVSfJBcE1p3k
-// 5. Nhận thức = fe2XJg4GiKu4CQWz19Wp
-// 5. Kỷ năng chơi = TM6PVKuFYIlbUkfOeiM0
-// 6. Vận động tinh = rPZHRivhLCsJ6bECFC0O
-// 7. Vận động thô = 8ftbSbuOgqf66XENkw2j
-// 8. Tập trung chú ý = R0P9By4XA63tO3QIJTMT
-// 9. Can thiệp nhóm nhỏ 2–3 trẻ = yByjUVCWniqVshiWLn8r
-
 
 // functions:
 export const calculateAgeText = (dateString: string | undefined): string => {
