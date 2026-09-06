@@ -155,7 +155,7 @@ export default function App() {
             isAdmin ? (
               <RegisterPage />
             ) : (
-              <Navigate to="/" replace />
+              <Navigate to='/' replace />
             )
           }
         />
