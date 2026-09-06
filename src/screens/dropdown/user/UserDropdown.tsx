@@ -41,6 +41,7 @@ export default function UserDropdown({
   const [showLogout, setShowLogout] = useState(false);
   const { setLoadingOverLay } = useLoadingOverLayStore();
   const { child } = useChildStore();
+  const isAdmin = user && user?.role === 'admin' 
 
   useEffect(() => {
     if (!show) return;
@@ -212,6 +213,8 @@ export default function UserDropdown({
 
               <i className="bi bi-chevron-right ak-user-arrow" />
             </button>
+            {
+              isAdmin && 
             <Link to={"../register"} style={{ textDecoration: "none" }}>
               <button type="button">
                 <span className="ak-user-menu-icon ak-user-blue">
@@ -226,6 +229,8 @@ export default function UserDropdown({
                 <i className="bi bi-chevron-right ak-user-arrow" />
               </button>
             </Link>
+
+            }
 
             {/* <button
               type="button"

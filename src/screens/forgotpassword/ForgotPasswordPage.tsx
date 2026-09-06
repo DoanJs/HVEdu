@@ -129,7 +129,7 @@ export default function ForgotPasswordPage() {
         </section>
 
         <p className="forgot-copy">
-          © 2026 An Khang Education. All rights reserved.
+          © 2026 Hy Vọng Education. All rights reserved.
         </p>
       </section>
     </main>

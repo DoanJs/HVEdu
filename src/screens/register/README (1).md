@@ -1,6 +1,6 @@
 # AnKhangRegisterPage
 
-Trang Register theo style An Khang Education.
+Trang Register theo style Hy Vọng Education.
 
 ## Dùng trong React
 

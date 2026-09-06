@@ -300,7 +300,7 @@ export default function RegisterPage() {
         </section>
 
         <div className="ak-register-footer">
-          © 2026 An Khang Education. All rights reserved.
+          © 2026 Hy Vọng Education. All rights reserved.
         </div>
       </div>
 

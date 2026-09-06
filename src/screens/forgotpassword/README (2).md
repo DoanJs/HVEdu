@@ -1,6 +1,6 @@
 # AnKhangForgotPasswordPage
 
-Trang Forgot Password ReactJS theo phong cách An Khang Education.
+Trang Forgot Password ReactJS theo phong cách Hy Vọng Education.
 
 ## Dùng trong React
 

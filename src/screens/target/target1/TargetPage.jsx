@@ -37,7 +37,7 @@ export default function TargetPage() {
             <span className="star s1">★</span><span className="star s2">★</span><span className="star s3">★</span>
             <i className="bi bi-person-arms-up" />
           </div>
-          <strong>AN KHANG</strong>
+          <strong>HY VỌNG</strong>
           <small>EDUCATION</small>
         </div>
 

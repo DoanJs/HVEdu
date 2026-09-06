@@ -14,7 +14,7 @@
 //         <div className="splash-logo">
 //           {/* <div className="logo-circle"><i className="bi bi-stars" /></div> */}
 //           <img src={icon512} alt="splash-img" />
-//           <h1>AN KHANG</h1>
+//           <h1>HY VỌNG</h1>
 //           <span>EDUCATION</span>
 //         </div>
 

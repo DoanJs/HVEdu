@@ -10,6 +10,7 @@ export default function BankPage() {
   const { fields } = useFieldStore();
   const [showAddField, setShowAddField] = useState(false);
   const { user } = useUserStore();
+  const isAdmin = user && user?.role === 'admin' 
 
   // const filteredFields = useMemo(() => {
   //   const text = keyword.trim().toLowerCase();
@@ -45,7 +46,7 @@ export default function BankPage() {
   return (
     <section className="bank-scroll-area">
       <div className="bank-toolbar">
-        {user && user.role && (
+        {isAdmin && (
           <button className="target-add" onClick={() => setShowAddField(true)}>
             <i className="bi bi-plus-lg" />
             Thêm lĩnh vực

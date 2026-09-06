@@ -92,7 +92,7 @@ export default function ChildrenCard({
         </div>
         {child.teacherIds.length > 0 &&
           child.teacherIds.map((_: any) => {
-            if (!isAdmin) {
+            if (isAdmin && teacherMap[_]?.role !== "admin") {
               return (
                 <div className="teacher-row" key={_} style={{justifyContent: "flex-start"}}>
                   <img

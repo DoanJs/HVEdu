@@ -1,6 +1,6 @@
 # AnKhang NotificationDropdown
 
-Component dropdown thông báo dùng chung cho hệ thống An Khang Education.
+Component dropdown thông báo dùng chung cho hệ thống Hy Vọng Education.
 
 ## Cài đặt
 

@@ -45,6 +45,7 @@ export default function PlanPage() {
   const [planNews, setPlanNews] = useState<PlanModel[]>([]);
   const { teachers } = useTeacherStore();
   const { totalPlanTasks } = useTotalPlanTaskStore();
+  const isAdmin = user && user?.role === 'admin' 
 
   const teacherMap = useMemo(() => {
     const map: any = {};
@@ -140,7 +141,7 @@ export default function PlanPage() {
           Tạo kế hoạch mới
         </Link>
 
-        {user && user.role && (
+        {isAdmin && (
           <button className="target-add" onClick={() => setShowAddPlan(true)}>
             <i className="bi bi-pencil" />
             Chỉnh sửa kế hoạch

@@ -150,7 +150,7 @@ export default function LoginPage() {
         </section>
 
         <div className="ak-login-footer">
-          © 2024 An Khang Education. All rights reserved.
+          © 2024 Hy Vọng Education. All rights reserved.
         </div>
       </div>
       <LoadingOverlay show={loading} />

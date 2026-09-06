@@ -25,6 +25,7 @@ export default function TargetPage() {
   const { setChild, child } = useChildStore();
   const { setLoadingOverLay, loadingOverLay } = useLoadingOverLayStore();
   const [showAddTarget, setShowAddTarget] = useState(false);
+  const isAdmin = user && user?.role === 'admin' 
 
   useEffect(() => {
     if (!childId) return;
@@ -163,7 +164,7 @@ export default function TargetPage() {
           <i className="bi bi-funnel" />
           {filteredTargets.length}
         </button>
-        {user && user.role === "admin" && (
+        {isAdmin && (
           <button className="target-add" onClick={() => setShowAddTarget(true)}>
             <i className="bi bi-plus-lg" />
             Thêm mục tiêu

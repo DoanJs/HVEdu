@@ -1,6 +1,6 @@
 # LogoutConfirmModal
 
-Component modal xác nhận đăng xuất theo tone xanh An Khang.
+Component modal xác nhận đăng xuất theo tone xanh Hy Vọng.
 
 ## Cách dùng nhanh
 

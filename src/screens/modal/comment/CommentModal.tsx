@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CommentItem from "./CommentItem";
 import "./CommentModal.css";
+import { useUserStore } from "../../../zustand";
 // type CommentStatus = "approved" | "edit" | "pending";
 // type CommentItemType = {
 //   id: number;
@@ -37,6 +38,8 @@ export default function CommentModal({
 }: CommentModalProps) {
   const [isCommenting, setIsCommenting] = useState(false);
   const [content, setContent] = useState("");
+  const { user } = useUserStore();
+  const isAdmin = user && (user?.role === 'admin' || user?.position === 'Phó Giám đốc') 
 
   useEffect(() => {
     if (!show) return;
@@ -131,6 +134,8 @@ export default function CommentModal({
         <footer className="ak-comment-footer">
           {!isCommenting ? (
             <>
+            {
+              isAdmin && 
               <button
                 className="outline-btn blue"
                 onClick={() => setIsCommenting(true)}
@@ -138,6 +143,7 @@ export default function CommentModal({
                 <i className="bi bi-chat-square-text" />
                 Góp ý
               </button>
+            }
 
               <button className="ak-comment-done" onClick={onClose}>
                 Đóng

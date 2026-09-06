@@ -43,13 +43,30 @@ export default function PlanCard({ item, teacherMap, newestPlan, total }: any) {
       </div>
 
       <div className="card-stats">
-        <div>
-          <i className="bi bi-bullseye" />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <i className="bi bi-bullseye" />
+            <span>Mục tiêu</span>
+          </div>
           <strong>{total}</strong>
-          <span>Mục tiêu</span>
         </div>
-        <div>
-          <i className="bi bi-calendar2-check" />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <i className="bi bi-calendar2-check" />
+            <span>Tạo</span>
+          </div>
           <strong>
             {typeof item?.createAt === "number"
               ? moment(item?.createAt).format("HH:mm:ss DD/MM/YYYY")
@@ -57,10 +74,18 @@ export default function PlanCard({ item, teacherMap, newestPlan, total }: any) {
                   "HH:mm:ss DD/MM/YYYY",
                 )}
           </strong>
-          <span>Ngày tạo</span>
         </div>
-        <div>
-          <i className="bi bi-check-circle" />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <i className="bi bi-check-circle" />
+            <span>Duyệt</span>
+          </div>
           <strong>
             {typeof item?.updateAt === "number"
               ? moment(item?.updateAt).format("HH:mm:ss DD/MM/YYYY")
@@ -68,7 +93,6 @@ export default function PlanCard({ item, teacherMap, newestPlan, total }: any) {
                   "HH:mm:ss DD/MM/YYYY",
                 )}
           </strong>
-          <span>Ngày duyệt</span>
         </div>
       </div>
 
@@ -76,7 +100,10 @@ export default function PlanCard({ item, teacherMap, newestPlan, total }: any) {
         <p>Giáo viên thực hiện</p>
         <div className="teacher-row">
           <div className="teacher-info">
-            <img src={teacherMap[item.authorId]?.avatar || icon512} alt={"plan-teacher"} />
+            <img
+              src={teacherMap[item.authorId]?.avatar || icon512}
+              alt={"plan-teacher"}
+            />
             <div>
               <strong>{teacherMap[item.authorId]?.fullName}</strong>
               <span>Chức vụ: {teacherMap[item.authorId]?.position}</span>

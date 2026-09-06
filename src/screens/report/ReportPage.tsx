@@ -27,6 +27,7 @@ export default function ReportPage() {
   const { setSelectNavbar } = useSelectNavbarStore();
   const { teachers } = useTeacherStore();
   const { totalReportTasks } = useTotalReportTaskStore();
+  const isAdmin = user && user?.role === 'admin' 
 
   const teacherMap = useMemo(() => {
     const map: any = {};
@@ -102,7 +103,7 @@ export default function ReportPage() {
           <i className="bi bi-plus-lg" />
           Tạo báo cáo mới
         </Link>
-        {user && user.role && (
+        {isAdmin && (
           <button className="target-add" onClick={() => setShowAddReport(true)}>
             <i className="bi bi-pencil" />
             Chỉnh sửa báo cáo
