@@ -26,6 +26,7 @@ import "./ChildrenPage.css";
 import { dataTarget } from "../../constants/database/target";
 import { addDocData } from "../../constants/firebase/addDocData";
 import { dataChild } from "../../constants/database/child";
+import ScrollButtons from "../../scroll/ScrollButtons";
 
 export default function ChildrenPage() {
   const navigate = useNavigate();
@@ -433,6 +434,8 @@ export default function ChildrenPage() {
         loading={false}
         onClose={() => setShowAddTeacher(false)}
       />
+
+      <ScrollButtons targetSelector=".children-main" />
     </main>
   );
 }

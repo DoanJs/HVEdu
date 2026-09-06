@@ -1,14 +1,22 @@
 import { useEffect, useState } from "react";
 import "./ScrollButtons.css";
 
-const ScrollButtons = () => {
+interface ScrollButtonsProps {
+  targetSelector?: string;
+}
+
+const ScrollButtons = ({
+  targetSelector = ".dashboard-scroll-area",
+}: ScrollButtonsProps) => {
   const [showTop, setShowTop] = useState(false);
   const [showBottom, setShowBottom] = useState(false);
 
+  const getScrollElement = () =>
+    document.querySelector(targetSelector) as HTMLElement | null;
+
+
   useEffect(() => {
-    const scrollElement = document.querySelector(
-      ".dashboard-scroll-area"
-    ) as HTMLElement | null;
+    const scrollElement = getScrollElement();
 
     if (!scrollElement) return;
 
@@ -30,11 +38,6 @@ const ScrollButtons = () => {
       scrollElement.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const getScrollElement = () =>
-    document.querySelector(
-      ".dashboard-scroll-area"
-    ) as HTMLElement | null;
 
   const scrollToTop = () => {
     getScrollElement()?.scrollTo({

@@ -30,10 +30,11 @@ button {
 /* MAIN */
 
 .children-main {
-  min-height: 100vh;
+  height: 100vh;
   padding: 36px 40px 30px;
   background: #f7fbff;
   color: var(--ak-text);
+  overflow-x: auto;
 }
 
 /* TOPBAR */
@@ -395,12 +396,22 @@ button {
   }
 
   .children-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 18px;
   }
 
   .child-photo-wrap {
     height: 220px;
+  }
+  .child-body {
+    padding-bottom: 0;
+  }
+  .child-body h3 {
+    font-size: 16px;
+    text-align: center;
+  }
+  .child-body .teacher-row {
+    display: none;
   }
 }
 
