@@ -27,6 +27,21 @@ import { dataTarget } from "../../constants/database/target";
 import { addDocData } from "../../constants/firebase/addDocData";
 import { dataChild } from "../../constants/database/child";
 import ScrollButtons from "../../scroll/ScrollButtons";
+import { batchuoc } from "../../constants/database/new2/batchuoc";
+import { canthiepnhomnho } from "../../constants/database/new2/canthiepnhomnho";
+import { chinham } from "../../constants/database/new2/chinham";
+import { giacquanthigiac } from "../../constants/database/new2/giacquanthigiac";
+import { giacquanthinhgiac } from "../../constants/database/new2/giacquanthinhgiac";
+import { giacquanxucgiac } from "../../constants/database/new2/giacquanxucgiac";
+import { giaotiep } from "../../constants/database/new2/giaotiep";
+import { kynangchoi } from "../../constants/database/new2/kynangchoi";
+import { ngonngudiendat } from "../../constants/database/new2/ngonngudiendat";
+import { quansatchuylangnghe } from "../../constants/database/new2/quansatchuylangnghe";
+import { tienhocduong } from "../../constants/database/new2/tienhocduong";
+import { tienngongu } from "../../constants/database/new2/tienngonngu";
+import { tuphucvu } from "../../constants/database/new2/tuphucvu";
+import { vandongtho } from "../../constants/database/new2/vandongtho";
+import { vandongtinh } from "../../constants/database/new2/vandongtinh";
 
 export default function ChildrenPage() {
   const navigate = useNavigate();
@@ -88,19 +103,32 @@ export default function ChildrenPage() {
 
   // -----------------test add data-----------------
   // const addDataToFirebase = async () => {
-  //   const promiseItems = dataChild.map((_) =>
+  //   const promiseItems = [
+  //     ...batchuoc,
+  //     ...canthiepnhomnho,
+  //     ...chinham,
+  //     ...giacquanthigiac,
+  //     ...giacquanthinhgiac,
+  //     ...giacquanxucgiac,
+  //     ...giaotiep,
+  //     ...kynangchoi,
+  //     ...ngonngudiendat,
+  //     ...quansatchuylangnghe,
+  //     ...tienhocduong,
+  //     ...tienngongu,
+  //     ...tuphucvu,
+  //     ...vandongtho,
+  //     ...vandongtinh,
+  //   ].map((_) =>
   //     addDocData({
-  //       nameCollect: "children",
+  //       nameCollect: "targets",
   //       value: {
   //         ..._,
-  //         status: "studying",
-  //         shortName: "",
-  //         avatar: "",
 
   //         createAt: serverTimestamp(),
   //         updateAt: serverTimestamp(),
   //       },
-  //       metaDoc: "children",
+  //       metaDoc: "targets",
   //     }),
   //   );
   //   await Promise.all(promiseItems);

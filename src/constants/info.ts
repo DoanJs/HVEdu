@@ -161,25 +161,21 @@ const planCardThemes = [
 ];
 //HVEdu
 export const fieldOrder = [
-  "wP9FYxPtWil2Ss3Mm06S", // Ngôn ngữ hiểu
-  "sWobMN7VAWLtgDdxKP2n", // Ngôn ngữ diễn đạt
-  "3tKv2Duu2LNUaLRkttsD", // Kỷ năng xã hội
-  "sJJmAZJIrVSfJBcE1p3k", // Kỷ năng bắt chước
-  "fe2XJg4GiKu4CQWz19Wp", // Nhận thức
-  "TM6PVKuFYIlbUkfOeiM0", // Kỷ năng chơi
-  "rPZHRivhLCsJ6bECFC0O", // Vận động tinh
-  "8ftbSbuOgqf66XENkw2j", // Vận động thô
-  "R0P9By4XA63tO3QIJTMT", // Tập trung chú ý
   "yByjUVCWniqVshiWLn8r", // Can thiệp nhóm nhỏ 2–3 trẻ
-
-  "Jx8XkpdlcZXrrzFH6bQX", // Tiền ngôn ngữ
-  "Yi5J6gNI13S9zWfQZw8e", // Giao tiếp
-  "2tWH3H8idQC9WytyqZld", // Tự phục vụ
+  "sWobMN7VAWLtgDdxKP2n", // Ngôn ngữ diễn đạt
+  "rPZHRivhLCsJ6bECFC0O", // Vận động tinh
   "jRtks7uZ5jKw1QNLbqhu", // Tiền học đường
-  "mamyqwbjpOPb3jbnYCPN", // Học nhóm
+  "dzzd4nH9MCaxLss5iWwG", // Chỉnh âm
+  "Yi5J6gNI13S9zWfQZw8e", // Giao tiếp
+  "TM6PVKuFYIlbUkfOeiM0", // Kỷ năng chơi
   "Sb7af2lVreWXapcOa8yu", // Quan sát, chú ý, lắng nghe
-  "hvY1X9m5VlJQpdlkwfOc", // Chỉnh âm
-  "1pTeKHmQVYVZt2UjfCc3", // Giác quan
+  "Jx8XkpdlcZXrrzFH6bQX", // Tiền ngôn ngữ
+  "8ftbSbuOgqf66XENkw2j", // Vận động thô
+  "1pTeKHmQVYVZt2UjfCc3", // Giác quan thị giác
+  "Il8L9AKjZEI0v8ekQDhy", // Giác quan thính giác
+  "6rcljcLc1hJnsPugnTJH", // Giác quan xúc giác
+  "sJJmAZJIrVSfJBcE1p3k", // Kỷ năng bắt chước
+  "2tWH3H8idQC9WytyqZld", // Tự phục vụ
 ];
 
 // functions:
@@ -259,7 +255,7 @@ export const getUIForBank = (fieldName: string) => {
       icon = bank_qs;
       color = "blue";
       break;
-    case "Giác quan":
+    case "Giác quan thị giác":
       icon = bank_gq;
       color = "blue";
       break;
@@ -267,7 +263,7 @@ export const getUIForBank = (fieldName: string) => {
       icon = bank_ctnn;
       color = "orange";
       break;
-    case "Tập trung chú ý":
+    case "Giác quan thính giác":
       icon = bank_ctty;
       color = "green";
       break;
@@ -279,7 +275,7 @@ export const getUIForBank = (fieldName: string) => {
       icon = bank_knbc;
       color = "orange";
       break;
-    case "Kỷ năng xã hội":
+    case "Giác quan xúc giác":
       icon = bank_knxh;
       color = "green";
       break;
